@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: -6254447601982402922}
   m_Layer: 0
   m_Name: Hexgon
-  m_TagString: Untagged
+  m_TagString: Gem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -340,6 +340,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftExplosionParticles: {fileID: 4164994674942193377, guid: 760b934bb2a68db478ce364fc6b98ce5, type: 3}
   rightExplosionParticles: {fileID: 4164994674942193377, guid: 760b934bb2a68db478ce364fc6b98ce5, type: 3}
+  score: 0
+  Destroyed: 0
 --- !u!114 &-6254447601982402922
 MonoBehaviour:
   m_ObjectHideFlags: 0
