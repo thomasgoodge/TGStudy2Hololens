@@ -13,149 +13,24 @@ public class HazardSpawner : MonoBehaviour
     public float hazardRespawnTime;
     public float hazardRespawnRate = 1f;
     private int gemCount = 0;
-    public bool hazard;
     public bool spawnerActive;
-    private bool hazardOneSpawned;
-    private bool hazardTwoSpawned;
-    private bool hazardThreeSpawned;
-    public Stopwatch hazardTimeCounter = new Stopwatch();
-    //public bool GameRunning = false;
-
-    //Initialise Onsets and Offsets - Has to be set in the Unity Editor - High values are to stop CheckSpawn() comparing to 0
-    [SerializeField] private float hazardOneOnset;
-    [SerializeField] private float hazardOneOffset;
-
-    [SerializeField] private float hazardTwoOnset;
-    [SerializeField] private float hazardTwoOffset;
-
-    [SerializeField] private float hazardThreeOnset;
-    [SerializeField] private float hazardThreeOffset;
+    public bool counterActive;
+    
+    public GameObject HazardOnsetManagerScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        spawnerActive = false;
-        hazard = false;
-        hazardOneSpawned = false;
-        hazardTwoSpawned = false;
-        hazardThreeSpawned = false;
-        hazardTimeCounter.Start();
-
-        //Define Onsets and Offsets here
-        hazardOneOnset = 10000;
-        hazardOneOffset = 12000;
-        /*
-        hazardTwoOnset = **;
-        hazardTwoOffset = **;
-
-        hazardThreeOnset = **;
-        hazardThreeOffset = **;
-         */
+        gemCount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         // Reset the respawn time to a random number within range ( smaller range for hazard gems to increase spawn rate)
-       // if (GameRunning == true)
-        //{
-            hazardRespawnTime = Random.Range(hazardRespawnRate / 2, hazardRespawnRate * 2);
+        hazardRespawnTime = Random.Range(hazardRespawnRate / 2, hazardRespawnRate * 2);        
+        spawnerActive = HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().CheckSpawn(); 
 
-            //CheckSpawn();
-           // CheckHazard();
-        //}
-    }
-
-    public void CheckHazard()
-    {
-        if (hazard == false)
-        {
-            if (hazardTimeCounter.ElapsedMilliseconds >= hazardOneOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardOneOffset)
-            {
-                hazard = true;
-            }
-            else if (hazardTimeCounter.ElapsedMilliseconds >= hazardTwoOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardTwoOffset)
-            {
-                hazard = true;
-            }
-            else if (hazardTimeCounter.ElapsedMilliseconds >= hazardThreeOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardThreeOffset)
-            {
-                hazard = true;
-            }
-            else
-            {
-                hazard = false;
-            }
-        }
-        else if (hazard == true)
-        {
-            if (hazardTimeCounter.ElapsedMilliseconds >= hazardOneOffset && hazardTimeCounter.ElapsedMilliseconds <= hazardTwoOnset)
-            {
-                hazard = false;
-            }
-            else if (hazardTimeCounter.ElapsedMilliseconds >= hazardTwoOffset && hazardTimeCounter.ElapsedMilliseconds <= hazardThreeOnset)
-            {
-                hazard = false;
-            }
-            else if (hazardTimeCounter.ElapsedMilliseconds >= hazardThreeOffset)
-            {
-                hazard = false;
-            }
-        }
-    }
-    // Function to check whether the Spawner should be active or not, as well as time windows for when hazard gems should spawn.
-
-    //Currently hard coded but needs a more elegant solution!!//
-    public void CheckSpawn()
-    {
-        if (spawnerActive == false && hazard == true)
-        {
-            if (hazardOneSpawned == false)
-            {
-                if (hazardTimeCounter.ElapsedMilliseconds >= hazardOneOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardOneOffset)
-                {
-                    spawnerActive = true;
-                    hazardStart();
-                    hazardOneSpawned = true;
-                }
-            }
-            if (hazardTwoSpawned == false)
-            {
-                if (hazardTimeCounter.ElapsedMilliseconds >= hazardTwoOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardTwoOffset)
-                {
-                    spawnerActive = true;
-                    hazardStart();
-                    hazardTwoSpawned = true;
-                }
-            }
-            if (hazardThreeSpawned == false)
-            {
-                if (hazardTimeCounter.ElapsedMilliseconds >= hazardThreeOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardThreeOffset)
-                {
-                    spawnerActive = true;
-                    hazardStart();
-                    hazardThreeSpawned = true;
-                }
-            }
-        }
-        else if (spawnerActive == true)
-        {
-            if (hazardTimeCounter.ElapsedMilliseconds >= hazardOneOffset)
-            {
-                spawnerActive = false;
-                hazardStop();
-            }
-            if (hazardTimeCounter.ElapsedMilliseconds >= hazardTwoOffset)
-            {
-                spawnerActive = false;
-                hazardStop();
-            }
-            if (hazardTimeCounter.ElapsedMilliseconds >= hazardThreeOffset)
-            {
-                spawnerActive = false;
-                hazardStop();
-            }
-        }
     }
 
     // Create a Coroutine to create gems within the spawn area
@@ -187,16 +62,24 @@ public class HazardSpawner : MonoBehaviour
         Gizmos.DrawCube(centre, size);
     }
 
-
-    public void hazardStart()
+  public void hazardStart()
     {
-        StartCoroutine(SpawnHazardGem(spawnerActive));
+        if (counterActive == false)
+        {
+            counterActive = true;
+            StartCoroutine(SpawnHazardGem(spawnerActive));
+        }
+        else if (counterActive == true)
+        {
+            StartCoroutine(SpawnHazardGem(spawnerActive));
+        }
     }
 
     public void hazardStop()
     {
-        //Doesn't work with the StopCoroutine function
-        //StopCoroutine(SpawnHazardgem(spawnerActive));
+        
         StopCoroutine(SpawnHazardGem(spawnerActive));
     }
+
+
 }

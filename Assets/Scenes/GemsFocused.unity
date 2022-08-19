@@ -368,16 +368,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 506584292}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32e0166a501cf2a44a2512bc549c9dbd, type: 3}
+  m_Script: {fileID: 11500000, guid: cfe471419f6fbad46bb43a6cf15458fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centre: {x: -0.66, y: -0.15, z: 3}
-  size: {x: 0.5, y: 0.5, z: 0}
-  gemPrefab: {fileID: 279515709371442442, guid: 37c16166738ac934aaa8a68e45be57e3, type: 3}
-  hazardRespawnTime: 0
-  hazardRespawnRate: 1
   hazard: 0
   spawnerActive: 0
+  counterActive: 0
   hazardOneOnset: 0
   hazardOneOffset: 0
   hazardTwoOnset: 0
@@ -1114,12 +1110,8 @@ MonoBehaviour:
   hazardRespawnRate: 1
   hazard: 0
   spawnerActive: 0
-  hazardOneOnset: 0
-  hazardOneOffset: 0
-  hazardTwoOnset: 0
-  hazardTwoOffset: 0
-  hazardThreeOnset: 0
-  hazardThreeOffset: 0
+  counterActive: 0
+  HazardSpawnerScript: {fileID: 0}
 --- !u!1001 &2076835053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1219,7 +1211,7 @@ PrefabInstance:
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
-      objectReference: {fileID: 506584294}
+      objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
