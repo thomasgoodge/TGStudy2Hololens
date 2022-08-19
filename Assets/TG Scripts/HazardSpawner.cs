@@ -68,17 +68,19 @@ public class HazardSpawner : MonoBehaviour
         {
             counterActive = true;
             StartCoroutine(SpawnHazardGem(spawnerActive));
+            spawnerActive = true;
         }
         else if (counterActive == true)
         {
             StartCoroutine(SpawnHazardGem(spawnerActive));
+            spawnerActive = true;
         }
     }
 
     public void hazardStop()
     {
-        
         StopCoroutine(SpawnHazardGem(spawnerActive));
+        spawnerActive = false;
     }
 
 

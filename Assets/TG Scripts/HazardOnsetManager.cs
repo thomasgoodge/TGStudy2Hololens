@@ -8,7 +8,6 @@ public class HazardOnsetManager : MonoBehaviour
 
     // Create counters for time and number of gems, as well as initialising a respawn time
     public bool hazard;
-    public bool spawnerActive;
     private bool hazardOneSpawned;
     private bool hazardTwoSpawned;
     private bool hazardThreeSpawned;
@@ -30,7 +29,6 @@ public class HazardOnsetManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnerActive = false;
         hazard = false;
         hazardTimeCounter.Start();
 
@@ -53,15 +51,13 @@ public class HazardOnsetManager : MonoBehaviour
 
         CheckHazard();
         CheckSpawn();
-        if (hazard == true && spawnerActive == false)
+        if (CheckHazard() && CheckSpawn())
         {
             HazardSpawnerScript.GetComponent<HazardSpawner>().hazardStart();
-
         }
-        else if (hazard == false && spawnerActive == true)
+        else if (!CheckHazard() && !CheckSpawn())
         {
             HazardSpawnerScript.GetComponent<HazardSpawner>().hazardStop();
-
         }
     }
 
@@ -72,85 +68,69 @@ public class HazardOnsetManager : MonoBehaviour
         {
             if (hazardTimeCounter.ElapsedMilliseconds >= hazardOneOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardOneOffset)
             {
-                return hazard = true;
+                hazard = true;
+                return true;
             }
             else if (hazardTimeCounter.ElapsedMilliseconds >= hazardTwoOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardTwoOffset)
             {
-                return hazard = true;
+                hazard = true;
+                return true;
             }
             else if (hazardTimeCounter.ElapsedMilliseconds >= hazardThreeOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardThreeOffset)
             {
-                return hazard = true;
+                hazard = true;
+                return true;
             }
-            else
-            {
-                return hazard = false;
-            }
+
+        return hazard;
+          
         }
         else if (hazard == true)
         {
             if (hazardTimeCounter.ElapsedMilliseconds >= hazardOneOffset && hazardTimeCounter.ElapsedMilliseconds <= hazardTwoOnset)
             {
-                return hazard = false;
+                hazard = false;
+                return false;
             }
             else if (hazardTimeCounter.ElapsedMilliseconds >= hazardTwoOffset && hazardTimeCounter.ElapsedMilliseconds <= hazardThreeOnset)
             {
-                return hazard = false;
+                hazard = false;
+                return false;
             }
             else if (hazardTimeCounter.ElapsedMilliseconds >= hazardThreeOffset)
             {
-                return hazard = false;
+                hazard = false;
+                return false;
             }
-            else 
-            {
-                return hazard = true;
-            }
+       return true;
         }
+
+        return hazard;
     }
     // Function to check whether the Spawner should be active or not, as well as time windows for when hazard gems should spawn.
-
-    //Currently hard coded but needs a more elegant solution!!//
     public bool CheckSpawn()
     {
-        if (spawnerActive == false && hazard == true)
+        bool currentState =  HazardSpawnerScript.GetComponent<HazardSpawner>().spawnerActive;
+
+        if (currentState == false && hazard == true)
         {
-            if (hazardOneSpawned == false)
-            {
-                if (hazardTimeCounter.ElapsedMilliseconds >= hazardOneOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardOneOffset)
-                {
-                    return  spawnerActive = true;
-                }
-            }
-            if (hazardTwoSpawned == false)
-            {
-                if (hazardTimeCounter.ElapsedMilliseconds >= hazardTwoOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardTwoOffset)
-                {
-                    return  spawnerActive = true;
-                }
-            }
-            if (hazardThreeSpawned == false)
-            {
-                if (hazardTimeCounter.ElapsedMilliseconds >= hazardThreeOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardThreeOffset)
-                {
-                    return  spawnerActive = true;
-                }
-            }
+            return true;
         }
-        else if (spawnerActive == true)
+        else if (currentState == true && hazard == true)
         {
-            if (hazardTimeCounter.ElapsedMilliseconds >= hazardOneOffset)
-            {
-                return  spawnerActive = false;
-            }
-            if (hazardTimeCounter.ElapsedMilliseconds >= hazardTwoOffset)
-            {
-                return  spawnerActive = false; 
-            }
-            if (hazardTimeCounter.ElapsedMilliseconds >= hazardThreeOffset)
-            {
-                return  spawnerActive = false;
-            }
+            return true;
         }
+        else if (currentState == true && hazard == false)
+        {
+            return false;
+        }
+        else if (currentState == false && hazard == false)
+        {
+            return false;
+        }
+        
+        return currentState; 
+
     }
 
 

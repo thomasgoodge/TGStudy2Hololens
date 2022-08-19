@@ -152,7 +152,6 @@ Transform:
   m_Children:
   - {fileID: 1480047769}
   - {fileID: 1148862511}
-  - {fileID: 506584293}
   - {fileID: 1572549128}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -328,58 +327,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5420d8672df87074ea02954d49dc7384, type: 3}
---- !u!1 &506584292
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 506584293}
-  - component: {fileID: 506584294}
-  m_Layer: 0
-  m_Name: LeftHazard SpawnCube (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &506584293
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 506584292}
-  m_LocalRotation: {x: 0.70710576, y: -0, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
-  m_Children: []
-  m_Father: {fileID: 129327497}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &506584294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 506584292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfe471419f6fbad46bb43a6cf15458fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hazard: 0
-  spawnerActive: 0
-  counterActive: 0
-  hazardOneOnset: 0
-  hazardOneOffset: 0
-  hazardTwoOnset: 0
-  hazardTwoOffset: 0
-  hazardThreeOnset: 0
-  hazardThreeOffset: 0
 --- !u!1 &576917142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,6 +1017,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1572549128}
   - component: {fileID: 1572549129}
+  - component: {fileID: 1572549130}
   m_Layer: 0
   m_Name: RightHazard SpawnCube (4)
   m_TagString: Untagged
@@ -1089,7 +1037,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 129327497}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1572549129
 MonoBehaviour:
@@ -1108,10 +1056,29 @@ MonoBehaviour:
   gemPrefab: {fileID: 279515709371442442, guid: 37c16166738ac934aaa8a68e45be57e3, type: 3}
   hazardRespawnTime: 0
   hazardRespawnRate: 1
-  hazard: 0
   spawnerActive: 0
   counterActive: 0
-  HazardSpawnerScript: {fileID: 0}
+  HazardOnsetManagerScript: {fileID: 1572549127}
+--- !u!114 &1572549130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572549127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfe471419f6fbad46bb43a6cf15458fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hazard: 0
+  HazardSpawnerScript: {fileID: 1572549127}
+  hazardOneOnset: 10000
+  hazardOneOffset: 12000
+  hazardTwoOnset: 0
+  hazardTwoOffset: 0
+  hazardThreeOnset: 0
+  hazardThreeOffset: 0
 --- !u!1001 &2076835053
 PrefabInstance:
   m_ObjectHideFlags: 0
