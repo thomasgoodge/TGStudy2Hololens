@@ -5,18 +5,19 @@ using UnityEngine;
 
 public class HazardOnsetManager : MonoBehaviour
 {
-
     // Create counters for time and number of gems, as well as initialising a respawn time
     public bool hazard;
-    private bool hazardOneSpawned;
-    private bool hazardTwoSpawned;
-    private bool hazardThreeSpawned;
+    public float onset;
+    public float offset;
+
     public Stopwatch hazardTimeCounter = new Stopwatch();
 
     public GameObject HazardSpawnerScript;
-
+    public GameObject HazardListScript;
 
     //Initialise Onsets and Offsets - Has to be set in the Unity Editor - High values are to stop CheckSpawn() comparing to 0
+    
+    
     [SerializeField] private float hazardOneOnset;
     [SerializeField] private float hazardOneOffset;
 
@@ -25,6 +26,7 @@ public class HazardOnsetManager : MonoBehaviour
 
     [SerializeField] private float hazardThreeOnset;
     [SerializeField] private float hazardThreeOffset;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -33,37 +35,48 @@ public class HazardOnsetManager : MonoBehaviour
         hazardTimeCounter.Start();
 
         //Define Onsets and Offsets here
-        hazardOneOnset = 10000;
-        hazardOneOffset = 12000;
+        
+        hazardOneOnset = 8000;
+        hazardOneOffset = 10000;
 
-        /*
-        hazardTwoOnset = **;
-        hazardTwoOffset = **;
+        
+        hazardTwoOnset = 12000;
+        hazardTwoOffset = 14000;
 
-        hazardThreeOnset = **;
-        hazardThreeOffset = **;
-         */
+        hazardThreeOnset = 17000;
+        hazardThreeOffset = 19000;
+         
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        CheckHazard();
-        CheckSpawn();
-        if (CheckHazard() && CheckSpawn())
+        bool hzrd = CheckHazard();
+        bool spwn= CheckSpawn();
+        if (hzrd && spwn)
         {
+            //if the spawner isn't currently running and hazard == true, then start the coroutine
             HazardSpawnerScript.GetComponent<HazardSpawner>().hazardStart();
         }
-        else if (!CheckHazard() && !CheckSpawn())
+        else if (!hzrd && !spwn)
         {
+            //if hazard == false and spawner is active, then stop the spawner
             HazardSpawnerScript.GetComponent<HazardSpawner>().hazardStop();
         }
     }
+/*
+    public float GetHazardOnset()
+    {
+       onset =  HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[1].Onset;
+    }
 
+    public float GetHazardOffset()
+    {
+       offset =  HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[1].Offset;
+    }
+*/
     public bool CheckHazard()
     {
-       
         if (hazard == false)
         {
             if (hazardTimeCounter.ElapsedMilliseconds >= hazardOneOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardOneOffset)
@@ -71,6 +84,7 @@ public class HazardOnsetManager : MonoBehaviour
                 hazard = true;
                 return true;
             }
+            
             else if (hazardTimeCounter.ElapsedMilliseconds >= hazardTwoOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardTwoOffset)
             {
                 hazard = true;
@@ -81,8 +95,9 @@ public class HazardOnsetManager : MonoBehaviour
                 hazard = true;
                 return true;
             }
+            
 
-        return hazard;
+        return false;
           
         }
         else if (hazard == true)
@@ -92,6 +107,7 @@ public class HazardOnsetManager : MonoBehaviour
                 hazard = false;
                 return false;
             }
+            /*
             else if (hazardTimeCounter.ElapsedMilliseconds >= hazardTwoOffset && hazardTimeCounter.ElapsedMilliseconds <= hazardThreeOnset)
             {
                 hazard = false;
@@ -102,6 +118,7 @@ public class HazardOnsetManager : MonoBehaviour
                 hazard = false;
                 return false;
             }
+            */
        return true;
         }
 
@@ -132,7 +149,6 @@ public class HazardOnsetManager : MonoBehaviour
         return currentState; 
 
     }
-
 
 }
 

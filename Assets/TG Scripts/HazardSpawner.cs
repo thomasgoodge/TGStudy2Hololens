@@ -12,9 +12,9 @@ public class HazardSpawner : MonoBehaviour
     // Create counters for time and number of gems, as well as initialising a respawn time
     public float hazardRespawnTime;
     public float hazardRespawnRate = 1f;
-    private int gemCount = 0;
+    private int gemCount;
     public bool spawnerActive;
-    public bool counterActive;
+
     
     public GameObject HazardOnsetManagerScript;
 
@@ -36,7 +36,7 @@ public class HazardSpawner : MonoBehaviour
     // Create a Coroutine to create gems within the spawn area
     public IEnumerator SpawnHazardGem(bool spawnerActive)
     {
-        while (spawnerActive == true)
+        if (spawnerActive == false)
         //while (enabled) 
         {
             // Create a new Vector 3 position that falls within the confines of the spawn area (Range is double the size of the spawn area, so need to halve it to maintain correct ratios)
@@ -45,11 +45,12 @@ public class HazardSpawner : MonoBehaviour
             // Create an object with these properties
             GameObject alpha = Instantiate(gemPrefab, pos, Quaternion.identity);
             gemCount++;
+           // Debug.Log("Hazard Gems: " + gemCount);
             // print(gemPrefab.ToString() + " spawned: " + gemCount);
             // Wait for the amount of time within the respawn range
             yield return new WaitForSeconds(hazardRespawnTime);
         }
-        if (spawnerActive == false)
+        if (spawnerActive == true)
         {
             yield return null;
         }
@@ -64,17 +65,9 @@ public class HazardSpawner : MonoBehaviour
 
   public void hazardStart()
     {
-        if (counterActive == false)
-        {
-            counterActive = true;
-            StartCoroutine(SpawnHazardGem(spawnerActive));
-            spawnerActive = true;
-        }
-        else if (counterActive == true)
-        {
-            StartCoroutine(SpawnHazardGem(spawnerActive));
-            spawnerActive = true;
-        }
+        StartCoroutine(SpawnHazardGem(spawnerActive));
+        spawnerActive = true;
+       
     }
 
     public void hazardStop()
