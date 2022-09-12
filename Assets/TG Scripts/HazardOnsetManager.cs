@@ -7,13 +7,13 @@ public class HazardOnsetManager : MonoBehaviour
 {
     // Create counters for time and number of gems, as well as initialising a respawn time
     public bool hazard;
-    public float onset;
-    public float offset;
+    public bool currentState;
 
     public Stopwatch hazardTimeCounter = new Stopwatch();
 
     public GameObject HazardSpawnerScript;
     public GameObject HazardListScript;
+
 
     //Initialise Onsets and Offsets - Has to be set in the Unity Editor - High values are to stop CheckSpawn() comparing to 0
     
@@ -32,37 +32,41 @@ public class HazardOnsetManager : MonoBehaviour
     void Start()
     {
         hazard = false;
-        hazardTimeCounter.Start();
-
-        //Define Onsets and Offsets here
         
-        hazardOneOnset = 8000;
-        hazardOneOffset = 10000;
 
+        //Define Onsets and Offsets here (ms)
         
-        hazardTwoOnset = 12000;
-        hazardTwoOffset = 14000;
+        hazardOneOnset = 5000;
+        hazardOneOffset = 8000;
+        
+        
+        hazardTwoOnset = 15000;
+        hazardTwoOffset = 19000;
 
-        hazardThreeOnset = 17000;
-        hazardThreeOffset = 19000;
-         
+        hazardThreeOnset = 24000;
+        hazardThreeOffset = 30000;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        bool hzrd = CheckHazard();
-        bool spwn= CheckSpawn();
-        if (hzrd && spwn)
+        hazard = CheckHazard();
+        currentState = CheckSpawn();
+
+       // print("Hazard = " + hazard);
+       // print("Spawner State = " + currentState);
+        /*if (hazard && !currentState)
         {
             //if the spawner isn't currently running and hazard == true, then start the coroutine
             HazardSpawnerScript.GetComponent<HazardSpawner>().hazardStart();
         }
-        else if (!hzrd && !spwn)
+        else if (!hzrd && spwn)
         {
             //if hazard == false and spawner is active, then stop the spawner
             HazardSpawnerScript.GetComponent<HazardSpawner>().hazardStop();
         }
+        */
     }
 /*
     public float GetHazardOnset()
@@ -82,22 +86,21 @@ public class HazardOnsetManager : MonoBehaviour
             if (hazardTimeCounter.ElapsedMilliseconds >= hazardOneOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardOneOffset)
             {
                 hazard = true;
-                return true;
+                return hazard;
             }
             
             else if (hazardTimeCounter.ElapsedMilliseconds >= hazardTwoOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardTwoOffset)
             {
                 hazard = true;
-                return true;
+                return hazard;
             }
             else if (hazardTimeCounter.ElapsedMilliseconds >= hazardThreeOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardThreeOffset)
             {
                 hazard = true;
-                return true;
+                return hazard;
             }
-            
 
-        return false;
+        return hazard;
           
         }
         else if (hazard == true)
@@ -105,21 +108,21 @@ public class HazardOnsetManager : MonoBehaviour
             if (hazardTimeCounter.ElapsedMilliseconds >= hazardOneOffset && hazardTimeCounter.ElapsedMilliseconds <= hazardTwoOnset)
             {
                 hazard = false;
-                return false;
+                return hazard;
             }
-            /*
+            
             else if (hazardTimeCounter.ElapsedMilliseconds >= hazardTwoOffset && hazardTimeCounter.ElapsedMilliseconds <= hazardThreeOnset)
             {
                 hazard = false;
-                return false;
+                return hazard;
             }
             else if (hazardTimeCounter.ElapsedMilliseconds >= hazardThreeOffset)
             {
                 hazard = false;
-                return false;
+                return hazard;
             }
-            */
-       return true;
+            
+       return hazard;
         }
 
         return hazard;
@@ -127,23 +130,29 @@ public class HazardOnsetManager : MonoBehaviour
     // Function to check whether the Spawner should be active or not, as well as time windows for when hazard gems should spawn.
     public bool CheckSpawn()
     {
-        bool currentState =  HazardSpawnerScript.GetComponent<HazardSpawner>().spawnerActive;
+         currentState =  HazardSpawnerScript.GetComponent<HazardSpawner>().spawnerActive;
 
         if (currentState == false && hazard == true)
         {
-            return true;
+            //If the spawner isn't active and it's in the hazard window, set the spawner to active
+            currentState = true;
+            return currentState;
         }
         else if (currentState == true && hazard == true)
         {
-            return true;
+            //If the spawner is active and it's in the hazard window, don't change anything
+            return currentState;
         }
         else if (currentState == true && hazard == false)
         {
-            return false;
+            //If the spawner is active but it's after the hazard onset, set the spawner to inactive
+            currentState =  false;
+            return currentState;
         }
         else if (currentState == false && hazard == false)
         {
-            return false;
+            //if the spawner isn't active and there is no hazard, leave it inactive
+            return currentState;
         }
         
         return currentState; 

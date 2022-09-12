@@ -60,10 +60,6 @@ public class Spawner : MonoBehaviour
             AddCounter();
            
             ObjectList.Add(alpha);
-
-            Debug.Log(counter);
-            
-           // Debug.Log(itemPrefab.ToString() + " spawned: " + sphereCount);
             yield return new WaitForSeconds(respawnTime);
         }
     }
