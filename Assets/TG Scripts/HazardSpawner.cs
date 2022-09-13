@@ -13,7 +13,7 @@ public class HazardSpawner : MonoBehaviour
     public float hazardRespawnTime;
     public float hazardRespawnRate = 1.0f;
     private int gemCount;
-    public bool spawnerActive;
+    [SerializeField] public bool spawnerActive;
     public GameObject HazardOnsetManagerScript;
 
     // Start is called before the first frame update
@@ -31,12 +31,24 @@ public class HazardSpawner : MonoBehaviour
         hazardRespawnTime = Random.Range(hazardRespawnRate / 2, hazardRespawnRate * 2);        
         spawnerActive = HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().currentState;
 
-        if (!spawnerActive)
+        if (spawnerActive)
         {
-            StartCoroutine(SpawnHazardGem(spawnerActive));
-
+            if (gemCount < 5)
+            {
+            Vector3 pos = centre + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
+            GameObject alpha = Instantiate(gemPrefab, pos, Quaternion.identity);
+            gemCount++;
+            new WaitForSeconds(0.8f);
+            
+            }
+            
+          
         }
-        
+        else if (!spawnerActive)
+        {
+            gemCount = 0;
+        }
+
        // print("Spawner script status = " + spawnerActive);
        //print(HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazardTimeCounter.ElapsedMilliseconds);
     }
@@ -44,10 +56,6 @@ public class HazardSpawner : MonoBehaviour
     // Create a Coroutine to create gems within the spawn area
     public IEnumerator SpawnHazardGem(bool spawnerActive)
     {        
-        while (!spawnerActive)
-        {
-            yield return null;
-        }
         while (spawnerActive) 
         {
             // Create a new Vector 3 position that falls within the confines of the spawn area (Range is double the size of the spawn area, so need to halve it to maintain correct ratios)
@@ -56,13 +64,12 @@ public class HazardSpawner : MonoBehaviour
             // Create an object with these properties
             GameObject alpha = Instantiate(gemPrefab, pos, Quaternion.identity);
 
-            gemCount++;
+            //gemCount++;
             print("Gems spawned = " + gemCount);
             // Wait for the amount of time within the respawn range
             yield return new WaitForSeconds(hazardRespawnTime);
-        }
-      
-        
+        } 
+                
     }
 
     void OnDrawGizmosSelected()
