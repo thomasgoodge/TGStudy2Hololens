@@ -9,6 +9,7 @@ public class HazardSpawner : MonoBehaviour
     public Vector3 centre;
     public Vector3 size;
     public GameObject gemPrefab;
+
     // Create counters for time and number of gems, as well as initialising a respawn time
     public float hazardRespawnTime;
     public float hazardRespawnRate = 1.0f;
@@ -31,18 +32,8 @@ public class HazardSpawner : MonoBehaviour
         //if the spawner is active from the HazardOnsetManager script
         if (spawnerActive)
         {
-            // if there are less than 5 gems, spawn a gem in the range of the spawner
-            if (gemCount < 4)
-            {
-            Vector3 pos = centre + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
-            GameObject alpha = Instantiate(gemPrefab, pos, Quaternion.identity);
-            gemCount++;
-            new WaitForSeconds(0.8f);
-            
-            }
+            StartCoroutine(SpawnHazardGem());               
         }
-
-        //if the spawner is not active, reset the count
         else if (!spawnerActive)
         {
             gemCount = 0;
@@ -64,4 +55,20 @@ public class HazardSpawner : MonoBehaviour
         HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazardTimeCounter.Start();
     }
 
+    IEnumerator SpawnHazardGem()
+    {
+      while (gemCount <= 4)
+            {
+            // if there are less than 5 gems, spawn a gem in the range of the spawner
+            Vector3 pos = centre + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
+            GameObject alpha = Instantiate(gemPrefab, pos, Quaternion.identity);
+            gemCount++;
+            yield return new WaitForSeconds(1.0f);
+            }
+        if (gemCount > 4);
+            {
+            yield return null;
+            }        
+    }
 }
+

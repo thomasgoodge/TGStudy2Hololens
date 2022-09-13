@@ -5,7 +5,6 @@ using System;
 
 public class CSVReader : MonoBehaviour
 {
-
     public TextAsset textAssetData;
 
     [System.Serializable]
@@ -17,8 +16,6 @@ public class CSVReader : MonoBehaviour
         public float Onset;
         public float Offset;
         public string Location;
-
-
     }
 
     [System.Serializable]
@@ -31,14 +28,12 @@ public class CSVReader : MonoBehaviour
 
     //declare an instance
     public HazardList myHazardList = new HazardList();
-
     
     // Start is called before the first frame update
     void Start()
     {
         ReadCSV();
     }
-
 
     void ReadCSV()
     {
@@ -47,7 +42,6 @@ public class CSVReader : MonoBehaviour
         //each cell is new data point in string
 
         int tableSize = data.Length / 4 - 1;
-
         
         myHazardList.hazard = new Hazard[tableSize];
 
@@ -55,7 +49,6 @@ public class CSVReader : MonoBehaviour
         {
             
             myHazardList.hazard[i] = new Hazard();
-
             
             myHazardList.hazard[i].ClipName = data[4* (i + 1)];
             

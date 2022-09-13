@@ -33,12 +33,10 @@ public class HazardOnsetManager : MonoBehaviour
     {
         hazard = false;
         
-
         //Define Onsets and Offsets here (ms)
         
         hazardOneOnset = 5000;
         hazardOneOffset = 8000;
-        
         
         hazardTwoOnset = 15000;
         hazardTwoOffset = 19000;
@@ -53,22 +51,8 @@ public class HazardOnsetManager : MonoBehaviour
     {
         hazard = CheckHazard();
         currentState = CheckSpawn();
-
-       // print("Hazard = " + hazard);
-       // print("Spawner State = " + currentState);
-        /*if (hazard && !currentState)
-        {
-            //if the spawner isn't currently running and hazard == true, then start the coroutine
-            HazardSpawnerScript.GetComponent<HazardSpawner>().hazardStart();
-        }
-        else if (!hzrd && spwn)
-        {
-            //if hazard == false and spawner is active, then stop the spawner
-            HazardSpawnerScript.GetComponent<HazardSpawner>().hazardStop();
-        }
-        */
     }
-/*
+
     public float GetHazardOnset()
     {
        onset =  HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[1].Onset;
@@ -78,7 +62,7 @@ public class HazardOnsetManager : MonoBehaviour
     {
        offset =  HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[1].Offset;
     }
-*/
+
     public bool CheckHazard()
     {
         if (hazard == false)
