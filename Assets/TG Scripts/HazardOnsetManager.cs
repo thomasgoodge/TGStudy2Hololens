@@ -14,98 +14,90 @@ public class HazardOnsetManager : MonoBehaviour
     public GameObject HazardSpawnerScript;
     public GameObject HazardListScript;
 
-
-    //Initialise Onsets and Offsets - Has to be set in the Unity Editor - High values are to stop CheckSpawn() comparing to 0
-    
-    
-    [SerializeField] private float hazardOneOnset;
-    [SerializeField] private float hazardOneOffset;
-
-    [SerializeField] private float hazardTwoOnset;
-    [SerializeField] private float hazardTwoOffset;
-
-    [SerializeField] private float hazardThreeOnset;
-    [SerializeField] private float hazardThreeOffset;
-    
+    public string clipName;
+    public string hazardLocation;
+    public float onset;
+    public float offset;
+    public int clipRef;
 
     // Start is called before the first frame update
     void Start()
     {
         hazard = false;
-        
-        //Define Onsets and Offsets here (ms)
-        
-        hazardOneOnset = 5000;
-        hazardOneOffset = 8000;
-        
-        hazardTwoOnset = 15000;
-        hazardTwoOffset = 19000;
-
-        hazardThreeOnset = 24000;
-        hazardThreeOffset = 30000;
-        
+        offset = 10;
+        clipName = GetClipName();
+        hazardLocation = GetHazardLocation();
+        clipRef = 0;
     }
 
-    // Update is called once per frame
+    // Update is called once per frame      
     void Update()
     {
         hazard = CheckHazard();
         currentState = CheckSpawn();
+
+    if (hazardTimeCounter.ElapsedMilliseconds >= offset)
+        {
+            //if the timer exceeds the hazard window, cycle through to the next clip and update the hazard details
+            clipRef++;
+            onset = GetHazardOnset();
+            offset = GetHazardOffset();
+            hazardTimeCounter.Stop();
+            hazardTimeCounter.Reset();
+            hazardTimeCounter.Start();
+            clipName = GetClipName();
+            hazardLocation = GetHazardLocation();
+        }
+
+        print(hazardTimeCounter.ElapsedMilliseconds);
+    }
+
+    public string GetClipName()
+    {
+        //function to retrieve the current clip
+       return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].ClipName;
+    }
+
+    public string GetHazardLocation()
+    {
+        //function to retrieve the hazard location for the spawner
+       return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].Location;
     }
 
     public float GetHazardOnset()
     {
-       onset =  HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[1].Onset;
+        //function to retrieve the hazard onset
+       return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].Onset;
     }
 
     public float GetHazardOffset()
     {
-       offset =  HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[1].Offset;
+        // function to retrieve the hazard offset.
+       return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].Offset;
     }
 
     public bool CheckHazard()
     {
+        //function that checks whether the hazard is active or not.
         if (hazard == false)
         {
-            if (hazardTimeCounter.ElapsedMilliseconds >= hazardOneOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardOneOffset)
+            if (hazardTimeCounter.ElapsedMilliseconds >= onset && hazardTimeCounter.ElapsedMilliseconds <= offset)
             {
+                // if hazard is false and the time is during the window, change to true
                 hazard = true;
                 return hazard;
             }
-            
-            else if (hazardTimeCounter.ElapsedMilliseconds >= hazardTwoOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardTwoOffset)
-            {
-                hazard = true;
-                return hazard;
-            }
-            else if (hazardTimeCounter.ElapsedMilliseconds >= hazardThreeOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardThreeOffset)
-            {
-                hazard = true;
-                return hazard;
-            }
-
         return hazard;
-          
         }
         else if (hazard == true)
         {
-            if (hazardTimeCounter.ElapsedMilliseconds >= hazardOneOffset && hazardTimeCounter.ElapsedMilliseconds <= hazardTwoOnset)
+            if (hazardTimeCounter.ElapsedMilliseconds >= offset)
             {
+                //if the timer is outside the window, turn hazard to false
                 hazard = false;
                 return hazard;
             }
-            
-            else if (hazardTimeCounter.ElapsedMilliseconds >= hazardTwoOffset && hazardTimeCounter.ElapsedMilliseconds <= hazardThreeOnset)
-            {
-                hazard = false;
-                return hazard;
-            }
-            else if (hazardTimeCounter.ElapsedMilliseconds >= hazardThreeOffset)
-            {
-                hazard = false;
-                return hazard;
-            }
-            
+              
        return hazard;
         }
 
