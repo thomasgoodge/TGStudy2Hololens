@@ -18,62 +18,41 @@ public class HazardOnsetManager : MonoBehaviour
     public string hazardLocation;
     public float onset;
     public float offset;
+    public float length;
     public int clipRef;
 
     // Start is called before the first frame update
     void Start()
     {
-        hazard = false;
-        offset = 10;
-        clipName = GetClipName();
-        hazardLocation = GetHazardLocation();
         clipRef = 0;
+        currentState = false;
+        hazard = false;
+        clipName = GetClipName();
+        length = GetClipLength();
+        hazardLocation = GetHazardLocation();
+        onset = GetHazardOnset();
+        offset = GetHazardOffset();
     }
 
-    // Update is called once per frame      
+    // Update is called once per frame
     void Update()
     {
         hazard = CheckHazard();
         currentState = CheckSpawn();
 
-    if (hazardTimeCounter.ElapsedMilliseconds >= offset)
-        {
-            //if the timer exceeds the hazard window, cycle through to the next clip and update the hazard details
-            clipRef++;
-            onset = GetHazardOnset();
-            offset = GetHazardOffset();
-            hazardTimeCounter.Stop();
-            hazardTimeCounter.Reset();
-            hazardTimeCounter.Start();
-            clipName = GetClipName();
-            hazardLocation = GetHazardLocation();
-        }
+        if (hazardTimeCounter.ElapsedMilliseconds >= length)
+            {
+                clipRef++;
+                onset = GetHazardOnset();
+                offset = GetHazardOffset();
+                clipName = GetClipName();
+                hazardLocation = GetHazardLocation();
+                length = GetClipLength();
+                StopwatchReset();
+                StopwatchStart();
+            }
 
         print(hazardTimeCounter.ElapsedMilliseconds);
-    }
-
-    public string GetClipName()
-    {
-        //function to retrieve the current clip
-       return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].ClipName;
-    }
-
-    public string GetHazardLocation()
-    {
-        //function to retrieve the hazard location for the spawner
-       return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].Location;
-    }
-
-    public float GetHazardOnset()
-    {
-        //function to retrieve the hazard onset
-       return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].Onset;
-    }
-
-    public float GetHazardOffset()
-    {
-        // function to retrieve the hazard offset.
-       return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].Offset;
     }
 
     public bool CheckHazard()
@@ -87,7 +66,11 @@ public class HazardOnsetManager : MonoBehaviour
                 hazard = true;
                 return hazard;
             }
-        return hazard;
+            else
+            {
+                return hazard;
+            }
+        
         }
         else if (hazard == true)
         {
@@ -97,16 +80,17 @@ public class HazardOnsetManager : MonoBehaviour
                 hazard = false;
                 return hazard;
             }
-              
-       return hazard;
+            else
+            {
+                return hazard;
+            }
         }
-
         return hazard;
     }
     // Function to check whether the Spawner should be active or not, as well as time windows for when hazard gems should spawn.
     public bool CheckSpawn()
     {
-         currentState =  HazardSpawnerScript.GetComponent<HazardSpawner>().spawnerActive;
+        currentState = HazardSpawnerScript.GetComponent<HazardSpawner>().spawnerActive;
 
         if (currentState == false && hazard == true)
         {
@@ -133,6 +117,48 @@ public class HazardOnsetManager : MonoBehaviour
         
         return currentState; 
 
+    }
+
+public string GetClipName()
+    {
+        //function to retrieve the current clip
+       return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].ClipName;
+    }
+
+    public string GetHazardLocation()
+    {
+        //function to retrieve the hazard location for the spawner
+       return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].Location;
+    }
+
+    public float GetHazardOnset()
+    {
+        //function to retrieve the hazard onset
+       return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].Onset;
+    }
+
+    public float GetHazardOffset()
+    {
+        // function to retrieve the hazard offset.
+       return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].Offset;
+    }
+
+    public float GetClipLength()
+    {
+        // function to retrieve the hazard offset.
+       return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].Length;
+    }
+    public void StopwatchStart()
+    {
+        //Function to start the stopwatch when the button is pressed
+       hazardTimeCounter.Start();
+    }
+
+
+    public void StopwatchReset()
+    {
+       hazardTimeCounter.Stop();
+       hazardTimeCounter.Reset();
     }
 
 }

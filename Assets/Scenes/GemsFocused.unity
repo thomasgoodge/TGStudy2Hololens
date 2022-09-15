@@ -152,11 +152,11 @@ Transform:
   m_Children:
   - {fileID: 1480047769}
   - {fileID: 1148862511}
-  - {fileID: 1572549128}
-  - {fileID: 646481824}
   - {fileID: 1280970130}
   - {fileID: 131360065}
+  - {fileID: 646481824}
   - {fileID: 954071051}
+  - {fileID: 1572549128}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -172,8 +172,8 @@ GameObject:
   - component: {fileID: 131360067}
   - component: {fileID: 131360066}
   m_Layer: 8
-  m_Name: CentreLeftHazard SpawnCube (5)
-  m_TagString: Untagged
+  m_Name: CentreLeftHazard SpawnCube (2)
+  m_TagString: Centre-left
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +190,7 @@ Transform:
   m_LocalScale: {x: 1.5587616, y: 3.0201643, z: 1.448798}
   m_Children: []
   m_Father: {fileID: 129327497}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &131360066
 MonoBehaviour:
@@ -208,10 +208,11 @@ MonoBehaviour:
   currentState: 0
   HazardSpawnerScript: {fileID: 131360064}
   HazardListScript: {fileID: 1878982063}
-  clipRef: 
+  clipName: 
   hazardLocation: 
   onset: 0
   offset: 0
+  clipRef: 0
 --- !u!114 &131360067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,8 +394,8 @@ GameObject:
   - component: {fileID: 646481826}
   - component: {fileID: 646481825}
   m_Layer: 8
-  m_Name: CentreHazard SpawnCube (4)
-  m_TagString: Untagged
+  m_Name: CentreHazard SpawnCube (3)
+  m_TagString: Centre
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -411,7 +412,7 @@ Transform:
   m_LocalScale: {x: 1.5587616, y: 3.0201643, z: 1.448798}
   m_Children: []
   m_Father: {fileID: 129327497}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &646481825
 MonoBehaviour:
@@ -429,10 +430,11 @@ MonoBehaviour:
   currentState: 0
   HazardSpawnerScript: {fileID: 646481823}
   HazardListScript: {fileID: 1878982063}
-  clipRef: 
+  clipName: 
   hazardLocation: 
   onset: 0
   offset: 0
+  clipRef: 0
 --- !u!114 &646481826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,8 +523,8 @@ GameObject:
   - component: {fileID: 954071053}
   - component: {fileID: 954071052}
   m_Layer: 8
-  m_Name: CentreRightHazard SpawnCube (6)
-  m_TagString: Untagged
+  m_Name: CentreRightHazard SpawnCube (4)
+  m_TagString: Centre-right
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -539,7 +541,7 @@ Transform:
   m_LocalScale: {x: 1.5587616, y: 3.0201643, z: 1.448798}
   m_Children: []
   m_Father: {fileID: 129327497}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &954071052
 MonoBehaviour:
@@ -557,10 +559,11 @@ MonoBehaviour:
   currentState: 0
   HazardSpawnerScript: {fileID: 954071050}
   HazardListScript: {fileID: 1878982063}
-  clipRef: 
+  clipName: 
   hazardLocation: 
   onset: 0
   offset: 0
+  clipRef: 0
 --- !u!114 &954071053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,7 +768,7 @@ GameObject:
   - component: {fileID: 1148862511}
   - component: {fileID: 1148862512}
   m_Layer: 0
-  m_Name: PentTarget SpawnCube (2)
+  m_Name: PentTarget SpawnCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -818,8 +821,8 @@ GameObject:
   - component: {fileID: 1280970132}
   - component: {fileID: 1280970131}
   m_Layer: 8
-  m_Name: LeftHazard SpawnCube (5)
-  m_TagString: Untagged
+  m_Name: LeftHazard SpawnCube (1)
+  m_TagString: Left
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -836,7 +839,7 @@ Transform:
   m_LocalScale: {x: 1.5587616, y: 3.0201643, z: 1.448798}
   m_Children: []
   m_Father: {fileID: 129327497}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1280970131
 MonoBehaviour:
@@ -854,10 +857,11 @@ MonoBehaviour:
   currentState: 0
   HazardSpawnerScript: {fileID: 1280970129}
   HazardListScript: {fileID: 1878982063}
-  clipRef: 
+  clipName: 
   hazardLocation: 
   onset: 0
   offset: 0
+  clipRef: 0
 --- !u!114 &1280970132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1157,7 +1161,7 @@ GameObject:
   - component: {fileID: 1480047769}
   - component: {fileID: 1480047770}
   m_Layer: 0
-  m_Name: HexTarget SpawnCube (1)
+  m_Name: HexTarget SpawnCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1254,8 +1258,8 @@ GameObject:
   - component: {fileID: 1572549129}
   - component: {fileID: 1572549130}
   m_Layer: 8
-  m_Name: RightHazard SpawnCube (3)
-  m_TagString: Untagged
+  m_Name: RightHazard SpawnCube (5)
+  m_TagString: Right
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1272,7 +1276,7 @@ Transform:
   m_LocalScale: {x: 1.5587616, y: 3.0201643, z: 1.448798}
   m_Children: []
   m_Father: {fileID: 129327497}
-  m_RootOrder: 2
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1572549129
 MonoBehaviour:
@@ -1309,10 +1313,11 @@ MonoBehaviour:
   currentState: 0
   HazardSpawnerScript: {fileID: 1572549127}
   HazardListScript: {fileID: 1878982063}
-  clipRef: 
+  clipName: 
   hazardLocation: 
   onset: 0
   offset: 0
+  clipRef: 0
 --- !u!1 &1878982063 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4070688397735756136, guid: 81f529d9b45e72042a81b3eb804a4122, type: 3}
@@ -1421,7 +1426,7 @@ PrefabInstance:
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 1572549129}
+      objectReference: {fileID: 1572549130}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
@@ -1429,19 +1434,19 @@ PrefabInstance:
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
-      objectReference: {fileID: 646481826}
+      objectReference: {fileID: 646481825}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[7].m_Target
       value: 
-      objectReference: {fileID: 1280970132}
+      objectReference: {fileID: 1280970131}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[8].m_Target
       value: 
-      objectReference: {fileID: 131360067}
+      objectReference: {fileID: 131360066}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[9].m_Target
       value: 
-      objectReference: {fileID: 954071053}
+      objectReference: {fileID: 954071052}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
       value: 2
@@ -1496,7 +1501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: HazardSpawner, Assembly-CSharp
+      value: HazardOnsetManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
@@ -1504,19 +1509,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
-      value: HazardSpawner, Assembly-CSharp
+      value: HazardOnsetManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[7].m_TargetAssemblyTypeName
-      value: HazardSpawner, Assembly-CSharp
+      value: HazardOnsetManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[8].m_TargetAssemblyTypeName
-      value: HazardSpawner, Assembly-CSharp
+      value: HazardOnsetManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[9].m_TargetAssemblyTypeName
-      value: HazardSpawner, Assembly-CSharp
+      value: HazardOnsetManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName

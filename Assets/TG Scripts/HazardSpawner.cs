@@ -20,6 +20,7 @@ public class HazardSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spawnerActive = false;
         gemCount = 0;
     }
 
@@ -28,14 +29,24 @@ public class HazardSpawner : MonoBehaviour
     {
         // Reset the respawn time to a random number within range ( smaller range for hazard gems to increase spawn rate)
         hazardRespawnTime = Random.Range(hazardRespawnRate / 2, hazardRespawnRate * 2);        
-        spawnerActive = HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().currentState;
-        //if the spawner is active from the HazardOnsetManager script
-        if (spawnerActive)
+        if (HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazard == true)
         {
-            StartCoroutine(SpawnHazardGem());               
+            spawnerActive = true;
         }
-        else if (!spawnerActive)
+        else if (HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazard == false)
         {
+            spawnerActive = false;
+        }
+        //if the spawner is active from the HazardOnsetManager script
+        while (spawnerActive && gemCount <= 3)
+        {
+            StartCoroutine("CorSpawnHazardGem", 1.0f);
+            //SpawnHazardGem();
+            gemCount++;
+        }
+        if (!spawnerActive)
+        {
+            StopCoroutine("CorSpawnHazardGem");
             gemCount = 0;
         }
        // print("Spawner script status = " + spawnerActive);
@@ -49,13 +60,7 @@ public class HazardSpawner : MonoBehaviour
         Gizmos.DrawCube(centre, size);
     }
 
-    public void StopwatchStart()
-    {
-        //Function to start the stopwatch when the button is pressed
-        HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazardTimeCounter.Start();
-    }
-
-    IEnumerator SpawnHazardGem()
+    IEnumerator CorSpawnHazardGem()
     {
       while (gemCount <= 4)
             {
@@ -70,5 +75,15 @@ public class HazardSpawner : MonoBehaviour
             yield return null;
             }        
     }
+    public void SpawnHazardGem()
+    {
+            // if there are less than 5 gems, spawn a gem in the range of the spawner
+            Vector3 pos = centre + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
+            GameObject alpha = Instantiate(gemPrefab, pos, Quaternion.identity);
+    }
+
+
+
+
 }
 

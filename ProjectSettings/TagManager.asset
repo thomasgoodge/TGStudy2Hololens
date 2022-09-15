@@ -10,6 +10,11 @@ TagManager:
   - Target Sphere
   - UI
   - Gem
+  - Left
+  - Centre-left
+  - Centre
+  - Centre-right
+  - Right
   layers:
   - Default
   - TransparentFX
