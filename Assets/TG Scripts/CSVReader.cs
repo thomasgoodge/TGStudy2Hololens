@@ -16,7 +16,7 @@ public class CSVReader : MonoBehaviour
         public float Onset;
         public float Offset;
         public float Length;
-        public string Location;
+        public int Location;
     }
 
     [System.Serializable]
@@ -59,7 +59,7 @@ public class CSVReader : MonoBehaviour
 
             myHazardList.hazard[i].Length = float.Parse(data[5 * (i + 1) + 3]);
             
-            myHazardList.hazard[i].Location = data[5 * (i + 1) + 4];
+            myHazardList.hazard[i].Location = int.Parse(data[5 * (i + 1) + 4]);
         }
 
 

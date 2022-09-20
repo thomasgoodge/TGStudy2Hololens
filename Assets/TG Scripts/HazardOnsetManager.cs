@@ -9,17 +9,20 @@ public class HazardOnsetManager : MonoBehaviour
     public bool hazard;
     public bool currentState;
 
-    public Stopwatch hazardTimeCounter = new Stopwatch();
+    [SerializeField] public Stopwatch hazardTimeCounter = new Stopwatch();
 
     public GameObject HazardSpawnerScript;
     public GameObject HazardListScript;
 
     public string clipName;
-    public string hazardLocation;
+    public int location;
+    public int hazardLocation;
     public float onset;
     public float offset;
     public float length;
     public int clipRef;
+
+    [SerializeField] public long timer;
 
     // Start is called before the first frame update
     void Start()
@@ -37,10 +40,11 @@ public class HazardOnsetManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer = hazardTimeCounter.ElapsedMilliseconds;
         hazard = CheckHazard();
         currentState = CheckSpawn();
 
-        if (hazardTimeCounter.ElapsedMilliseconds >= length)
+        if (hazardTimeCounter.ElapsedMilliseconds >= length || Input.GetKey("n")) // Input just for debugging
             {
                 clipRef++;
                 onset = GetHazardOnset();
@@ -51,8 +55,19 @@ public class HazardOnsetManager : MonoBehaviour
                 StopwatchReset();
                 StopwatchStart();
             }
+        else if (Input.GetKey("m"))
+        {
+            clipRef--;
+                onset = GetHazardOnset();
+                offset = GetHazardOffset();
+                clipName = GetClipName();
+                hazardLocation = GetHazardLocation();
+                length = GetClipLength();
+                StopwatchReset();
+                StopwatchStart();
+        }
 
-        print(hazardTimeCounter.ElapsedMilliseconds);
+        //print(hazardTimeCounter.ElapsedMilliseconds);
     }
 
     public bool CheckHazard()
@@ -119,16 +134,16 @@ public class HazardOnsetManager : MonoBehaviour
 
     }
 
-public string GetClipName()
+    public string GetClipName()
     {
         //function to retrieve the current clip
        return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].ClipName;
     }
 
-    public string GetHazardLocation()
+    public int GetHazardLocation()
     {
         //function to retrieve the hazard location for the spawner
-       return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].Location;
+       return  HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].Location;
     }
 
     public float GetHazardOnset()
