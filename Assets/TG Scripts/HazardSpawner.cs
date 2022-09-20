@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 
@@ -29,7 +30,7 @@ public class HazardSpawner : MonoBehaviour
     public Vector3 centre = new Vector3(0f,-0.15f,3f);
     public Vector3 centreright =new Vector3(0.33f,-0.15f,3f);
     public Vector3 right = new Vector3(0.66f,-0.15f,3f);
-
+    public string condition;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,9 @@ public class HazardSpawner : MonoBehaviour
         spawnerActive = false;
         gemCount = 0;     
         centralspawn = new Vector3(0f, -0.15f, 3f); 
+        condition = SceneManager.GetActiveScene().name;
+        print(condition);
+
     }
 
     // Update is called once per frame
@@ -52,53 +56,37 @@ public class HazardSpawner : MonoBehaviour
         spawnerActive = HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazard;
 
        //Select which spawner to use
-        if (selectSpawner == 5)
-        {
-            centralspawn.x = right.x; 
-        }
-        if (selectSpawner == 4)
-        {
-            centralspawn.x = centreright.x; 
-
-        }
-        if (selectSpawner == 3)
-        {
-            centralspawn.x = centre.x; 
-
-        }
-        if (selectSpawner == 2)
-        {
-            centralspawn.x = centreleft.x; 
-
-        }
-        if (selectSpawner == 1)
-        {
-            centralspawn.x = left.x; 
-
-        }
+        if (condition == "GemsFocusedCongruent")
+            {
+            setSpawnerLocationCongruent();
+            }
+        else if (condition == "GemsFocusedIncongruent")
+            {
+            setSpawnerLocationIncongruent();
+            }
 
         // Decide when to activate the spawner
         if (HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazard == true)
-        {
-            spawnerActive = true;
-        }
+            {
+                spawnerActive = true;
+            }
         else if (HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazard == false)
-        {
-            spawnerActive = false;
-        }
+            {
+                spawnerActive = false;
+            }
 
          //if the spawner is active from the HazardOnsetManager script
         while (spawnerActive && gemCount <= 3)
-        {  
-            StartCoroutine("CorSpawnHazardGem", 1.0f);     
-            gemCount++;                                 
-        }
+            {  
+                StartCoroutine("CorSpawnHazardGem", 1.0f);     
+                gemCount++;                                 
+            }
 
         if (!spawnerActive)
-        {
-            StopCoroutine("CorSpawnHazardGem");
-            gemCount = 0;
-        }
+            {
+                StopCoroutine("CorSpawnHazardGem");
+                gemCount = 0;
+            }
     
     }
 
@@ -106,13 +94,11 @@ public class HazardSpawner : MonoBehaviour
     {
         // Visualise the spawn cubes in the Scene when clicked on (Colour and dimensions)
         Gizmos.color = new Color(0, 1, 0, 0.5f);
-        Gizmos.DrawCube(centralspawn, size);
-        
+        Gizmos.DrawCube(centralspawn, size);    
     }
 
     IEnumerator CorSpawnHazardGem()
     {
-        
         while (gemCount <= 4)
             {     
                 // if there are less than 5 gems, spawn a gem in the range of the spawner
@@ -128,17 +114,59 @@ public class HazardSpawner : MonoBehaviour
             }        
     }
 
-    public static bool StringComparison (string s1, string s2)
+    public void setSpawnerLocationCongruent()
     {
-        if (s1.Length != s2.Length) return false;
-        for (int i = 0; i < s1.Length; i++)
-        {
-            if (s1[i] != s2[i]) {
-                print ("The " + i.ToString() + "th character is different.");
-                return false;
+        if (selectSpawner == 5)
+            {
+                centralspawn.x = right.x; 
             }
-        }
-        return true;
+        if (selectSpawner == 4)
+            {
+                centralspawn.x = centreright.x; 
+            }
+        if (selectSpawner == 3)
+            {
+                centralspawn.x = centre.x; 
+            }
+        if (selectSpawner == 2)
+            {
+                centralspawn.x = centreleft.x; 
+            }
+        if (selectSpawner == 1)
+            {
+                centralspawn.x = left.x; 
+            }
+    }
+    public void setSpawnerLocationIncongruent()
+    {
+        if (selectSpawner == 5)
+            {
+                centralspawn.x = left.x; 
+            }
+        if (selectSpawner == 4)
+            {
+                centralspawn.x = left.x; 
+            }
+        if (selectSpawner == 3)
+            {
+                int coinToss = Random.Range(1,2);
+                if (coinToss == 1)
+                {
+                centralspawn.x = right.x; 
+                }
+                else
+                {
+                centralspawn.x = left.x;
+                }
+            }
+        if (selectSpawner == 2)
+            {
+                centralspawn.x = right.x; 
+            }
+        if (selectSpawner == 1)
+            {
+                centralspawn.x = right.x; 
+            }
     }
 }
 
