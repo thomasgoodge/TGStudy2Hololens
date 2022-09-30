@@ -450,6 +450,7 @@ GameObject:
   - component: {fileID: 668141925}
   - component: {fileID: 668141924}
   - component: {fileID: 668141923}
+  - component: {fileID: 668141926}
   m_Layer: 8
   m_Name: HazardSpawner
   m_TagString: Untagged
@@ -473,6 +474,7 @@ MonoBehaviour:
   currentState: 0
   HazardSpawnerScript: {fileID: 668141922}
   HazardListScript: {fileID: 1957604160}
+  FileReaderScript: {fileID: 668141922}
   clipName: 
   location: 0
   hazardLocation: 0
@@ -480,6 +482,7 @@ MonoBehaviour:
   offset: 0
   length: 0
   clipRef: 0
+  currentClip: 
   timer: 0
 --- !u!114 &668141924
 MonoBehaviour:
@@ -523,6 +526,19 @@ Transform:
   m_Father: {fileID: 30181074}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &668141926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668141922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c91a1ab0202af40bfef723f072bc98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentClip: 
 --- !u!1 &726829036
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,6 +1428,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4070688397735756139, guid: 81f529d9b45e72042a81b3eb804a4122, type: 3}
+      propertyPath: FileReaderScript
+      value: 
+      objectReference: {fileID: 668141922}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81f529d9b45e72042a81b3eb804a4122, type: 3}
 --- !u!1 &1957604160 stripped

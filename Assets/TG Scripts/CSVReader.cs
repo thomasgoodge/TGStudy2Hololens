@@ -6,6 +6,10 @@ using System;
 public class CSVReader : MonoBehaviour
 {
     public TextAsset textAssetData;
+    public GameObject FileReaderScript;
+    public int clipIndex;
+    public string currClipCSV;
+
 
     [System.Serializable]
 
@@ -34,8 +38,15 @@ public class CSVReader : MonoBehaviour
     void Start()
     {
         ReadCSV();
+        CurrentClipIndex();
     }
 
+    void Update()
+    {
+        currClipCSV = GetCurrentClip();
+        clipIndex = CurrentClipIndex();
+
+    }
     void ReadCSV()
     {
         //Reads in text asset and splt string based on commas and carraige returns of csv file.
@@ -46,7 +57,7 @@ public class CSVReader : MonoBehaviour
         
         myHazardList.hazard = new Hazard[tableSize];
 
-        for ( int i = 0; i < tableSize; i++ )
+        for (int i = 0; i < tableSize; i++ )
         {
             
             myHazardList.hazard[i] = new Hazard();
@@ -64,6 +75,26 @@ public class CSVReader : MonoBehaviour
 
 
     }
+    public string GetCurrentClip()
+    {
+        return FileReaderScript.GetComponent<FileReader>().currentClip;
+    }
 
- 
+    public int CurrentClipIndex()
+    {
+        
+        for (int i = 0; i < myHazardList.hazard.Length; i++)
+        {
+            string clipName = (myHazardList.hazard[i].ClipName); 
+
+            if (clipName == GetCurrentClip())
+            {
+                clipIndex = i;
+            }
+        }
+        return clipIndex;
+        
+    }
+
+
 }

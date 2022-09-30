@@ -43,7 +43,7 @@ public class HazardSpawner : MonoBehaviour
         gemCount = 0;     
         centralspawn = new Vector3(0f, -0.15f, 3f); 
         condition = SceneManager.GetActiveScene().name;
-        print(condition);
+        
 
     }
 

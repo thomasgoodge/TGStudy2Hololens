@@ -13,6 +13,8 @@ public class HazardOnsetManager : MonoBehaviour
 
     public GameObject HazardSpawnerScript;
     public GameObject HazardListScript;
+    public GameObject FileReaderScript;
+
 
     public string clipName;
     public int location;
@@ -21,13 +23,13 @@ public class HazardOnsetManager : MonoBehaviour
     public float offset;
     public float length;
     public int clipRef;
-
+    [SerializeField]public string currentClip;
     [SerializeField] public long timer;
+    //string[] hazardList = HazardListScript.GetComponent<CSVReader>().myHazardList.hazard.ClipName;
 
     // Start is called before the first frame update
     void Start()
     {
-        clipRef = 0;
         currentState = false;
         hazard = false;
         clipName = GetClipName();
@@ -36,17 +38,30 @@ public class HazardOnsetManager : MonoBehaviour
         onset = GetHazardOnset();
         offset = GetHazardOffset();
     }
-
-    // Update is called once per frame
+// Update is called once per frame
     void Update()
     {
         timer = hazardTimeCounter.ElapsedMilliseconds;
         hazard = CheckHazard();
         currentState = CheckSpawn();
+        clipRef = GetClipIndex();
+        currentClip = GetCurrentClip();     
 
+        if (clipName != currentClip )
+        {
+            clipRef = GetClipIndex();
+            onset = GetHazardOnset();
+            offset = GetHazardOffset();
+            clipName = GetClipName();
+            hazardLocation = GetHazardLocation();
+            length = GetClipLength();
+            StopwatchReset();
+            StopwatchStart();
+        }
+        
         if (hazardTimeCounter.ElapsedMilliseconds >= length || Input.GetKey("n")) // Input just for debugging
             {
-                clipRef++;
+                clipRef = GetClipIndex();
                 onset = GetHazardOnset();
                 offset = GetHazardOffset();
                 clipName = GetClipName();
@@ -55,18 +70,6 @@ public class HazardOnsetManager : MonoBehaviour
                 StopwatchReset();
                 StopwatchStart();
             }
-        else if (Input.GetKey("m"))
-        {
-            clipRef--;
-                onset = GetHazardOnset();
-                offset = GetHazardOffset();
-                clipName = GetClipName();
-                hazardLocation = GetHazardLocation();
-                length = GetClipLength();
-                StopwatchReset();
-                StopwatchStart();
-        }
-
         //print(hazardTimeCounter.ElapsedMilliseconds);
     }
 
@@ -133,7 +136,17 @@ public class HazardOnsetManager : MonoBehaviour
         return currentState; 
 
     }
+    
+    public string GetCurrentClip()
+    {
+        return FileReaderScript.GetComponent<FileReader>().currentClip;
+    }
 
+    public int GetClipIndex()
+    {
+        return HazardListScript.GetComponent<CSVReader>().CurrentClipIndex();
+    }
+    
     public string GetClipName()
     {
         //function to retrieve the current clip
@@ -168,7 +181,6 @@ public class HazardOnsetManager : MonoBehaviour
         //Function to start the stopwatch when the button is pressed
        hazardTimeCounter.Start();
     }
-
 
     public void StopwatchReset()
     {
