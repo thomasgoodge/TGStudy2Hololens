@@ -218,6 +218,62 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5420d8672df87074ea02954d49dc7384, type: 3}
+<<<<<<< HEAD:Assets/Scenes/GemsFocusedCongruent.unity
+=======
+--- !u!1 &506584292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 506584293}
+  - component: {fileID: 506584294}
+  m_Layer: 0
+  m_Name: LeftHazard SpawnCube (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &506584293
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506584292}
+  m_LocalRotation: {x: 0.70710576, y: -0, z: -0, w: 0.7071079}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 129327497}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &506584294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506584292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e0166a501cf2a44a2512bc549c9dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centre: {x: -0.66, y: -0.15, z: 3}
+  size: {x: 0.5, y: 0.5, z: 0}
+  gemPrefab: {fileID: 279515709371442442, guid: 37c16166738ac934aaa8a68e45be57e3, type: 3}
+  hazardRespawnTime: 0
+  hazardRespawnRate: 1
+  hazard: 0
+  spawnerActive: 0
+  counterActive: 0
+  hazardOneOnset: 0
+  hazardOneOffset: 0
+>>>>>>> 52538d70e6b15f1796d600005d01aa88e4f57c0c:Assets/Scenes/GemsFocused.unity
 --- !u!1 &576917142
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,7 +749,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centre: {x: 0, y: -0.15, z: 3}
+<<<<<<< HEAD:Assets/Scenes/GemsFocusedCongruent.unity
   size: {x: 1.9, y: 0.5, z: 0}
+=======
+  size: {x: 2, y: 0.5, z: 0}
+>>>>>>> 52538d70e6b15f1796d600005d01aa88e4f57c0c:Assets/Scenes/GemsFocused.unity
   rotation: {x: 0, y: 0, z: 0, w: 0}
   itemPrefab: {fileID: 4489212933387002418, guid: ecf032514c17421488d6d0c5b328c428, type: 3}
   respawnRate: 2
@@ -759,6 +819,14 @@ PrefabInstance:
     - target: {fileID: 8424967650312756666, guid: 297bc24aeab6d2a418178aeef4efed5a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699485308581661060, guid: 297bc24aeab6d2a418178aeef4efed5a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699485308581661060, guid: 297bc24aeab6d2a418178aeef4efed5a, type: 3}
+      propertyPath: isFocusRequired
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 297bc24aeab6d2a418178aeef4efed5a, type: 3}
@@ -1018,7 +1086,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centre: {x: 0, y: -0.15, z: 3}
+<<<<<<< HEAD:Assets/Scenes/GemsFocusedCongruent.unity
   size: {x: 1.9, y: 0.5, z: 0}
+=======
+  size: {x: 2, y: 0.5, z: 0}
+>>>>>>> 52538d70e6b15f1796d600005d01aa88e4f57c0c:Assets/Scenes/GemsFocused.unity
   rotation: {x: 0, y: 0, z: 0, w: 0}
   itemPrefab: {fileID: 7927207392137251540, guid: 63345ca33c3902e438f3e2a6c2f2bc8c, type: 3}
   respawnRate: 2
@@ -1075,6 +1147,39 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4070688397735756136, guid: 81f529d9b45e72042a81b3eb804a4122, type: 3}
   m_PrefabInstance: {fileID: 700584536}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Scenes/GemsFocusedCongruent.unity
+=======
+  m_GameObject: {fileID: 1572549127}
+  m_LocalRotation: {x: 0.70710576, y: -0, z: -0, w: 0.7071079}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 129327497}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1572549129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572549127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e0166a501cf2a44a2512bc549c9dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centre: {x: 0.66, y: -0.15, z: 3}
+  size: {x: 0.5, y: 0.5, z: 0}
+  gemPrefab: {fileID: 279515709371442442, guid: 37c16166738ac934aaa8a68e45be57e3, type: 3}
+  hazardRespawnTime: 0
+  hazardRespawnRate: 1
+  hazard: 0
+  spawnerActive: 0
+  counterActive: 0
+  hazardOneOnset: 0
+  hazardOneOffset: 0
+>>>>>>> 52538d70e6b15f1796d600005d01aa88e4f57c0c:Assets/Scenes/GemsFocused.unity
 --- !u!1001 &2076835053
 PrefabInstance:
   m_ObjectHideFlags: 0
