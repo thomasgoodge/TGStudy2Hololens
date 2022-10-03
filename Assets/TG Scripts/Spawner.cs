@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     public Vector3 size;
     public Quaternion rotation;
     public GameObject itemPrefab;
-    //Create counters for time and number of spheres, as well as initialising a respawn time
+    //Create counters for time and number of gems, as well as initialising a respawn time
     public float respawnRate = 1f;
     public float respawnTime;
 

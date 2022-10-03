@@ -10,6 +10,8 @@ TagManager:
   - Target Sphere
   - UI
   - Gem
+  - Congruent
+  - Incongruent
   layers:
   - Default
   - TransparentFX

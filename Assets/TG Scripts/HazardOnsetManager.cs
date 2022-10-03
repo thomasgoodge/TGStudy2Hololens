@@ -9,128 +9,111 @@ public class HazardOnsetManager : MonoBehaviour
     public bool hazard;
     public bool currentState;
 
-    public Stopwatch hazardTimeCounter = new Stopwatch();
+    [SerializeField] public Stopwatch hazardTimeCounter = new Stopwatch();
 
     public GameObject HazardSpawnerScript;
     public GameObject HazardListScript;
+    public GameObject FileReaderScript;
+    public GameObject ReceiveUDPScript;
 
 
-    //Initialise Onsets and Offsets - Has to be set in the Unity Editor - High values are to stop CheckSpawn() comparing to 0
-    
-    
-    [SerializeField] private float hazardOneOnset;
-    [SerializeField] private float hazardOneOffset;
-
-    [SerializeField] private float hazardTwoOnset;
-    [SerializeField] private float hazardTwoOffset;
-
-    [SerializeField] private float hazardThreeOnset;
-    [SerializeField] private float hazardThreeOffset;
-    
+    public string clipName;
+    public int location;
+    public int hazardLocation;
+    public float onset;
+    public float offset;
+    public float length;
+    public int clipRef;
+    public bool stopwatchRunning;
+    [SerializeField]public string currentClip;
+    [SerializeField] public long timer;
+    //string[] hazardList = HazardListScript.GetComponent<CSVReader>().myHazardList.hazard.ClipName;
 
     // Start is called before the first frame update
     void Start()
     {
+        stopwatchRunning = false;
+        currentState = false;
         hazard = false;
-        
-
-        //Define Onsets and Offsets here (ms)
-        
-        hazardOneOnset = 5000;
-        hazardOneOffset = 8000;
-        
-        
-        hazardTwoOnset = 15000;
-        hazardTwoOffset = 19000;
-
-        hazardThreeOnset = 24000;
-        hazardThreeOffset = 30000;
-        
+        clipName = GetClipName();
+        length = GetClipLength();
+        hazardLocation = GetHazardLocation();
+        onset = GetHazardOnset();
+        offset = GetHazardOffset();
     }
-
     // Update is called once per frame
     void Update()
     {
+        timer = hazardTimeCounter.ElapsedMilliseconds;
         hazard = CheckHazard();
         currentState = CheckSpawn();
+        clipRef = GetClipIndex();
+        currentClip = GetCurrentClip();     
 
-       // print("Hazard = " + hazard);
-       // print("Spawner State = " + currentState);
-        /*if (hazard && !currentState)
+        if (clipName != currentClip )
         {
-            //if the spawner isn't currently running and hazard == true, then start the coroutine
-            HazardSpawnerScript.GetComponent<HazardSpawner>().hazardStart();
+            clipRef = GetClipIndex();
+            onset = GetHazardOnset();
+            offset = GetHazardOffset();
+            clipName = GetClipName();
+            hazardLocation = GetHazardLocation();
+            length = GetClipLength();
+            StopwatchReset();
+            StopwatchStart();
+            stopwatchRunning = true;
         }
-        else if (!hzrd && spwn)
-        {
-            //if hazard == false and spawner is active, then stop the spawner
-            HazardSpawnerScript.GetComponent<HazardSpawner>().hazardStop();
-        }
-        */
-    }
-/*
-    public float GetHazardOnset()
-    {
-       onset =  HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[1].Onset;
+        
+        if (hazardTimeCounter.ElapsedMilliseconds >= length || Input.GetKey("n")) // Input just for debugging
+            {
+                clipRef = GetClipIndex();
+                onset = GetHazardOnset();
+                offset = GetHazardOffset();
+                clipName = GetClipName();
+                hazardLocation = GetHazardLocation();
+                length = GetClipLength();
+                StopwatchReset();
+                StopwatchStart();
+                stopwatchRunning = true;
+            }
+        //print(hazardTimeCounter.ElapsedMilliseconds);
     }
 
-    public float GetHazardOffset()
-    {
-       offset =  HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[1].Offset;
-    }
-*/
     public bool CheckHazard()
     {
+        //function that checks whether the hazard is active or not.
         if (hazard == false)
         {
-            if (hazardTimeCounter.ElapsedMilliseconds >= hazardOneOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardOneOffset)
+            if (hazardTimeCounter.ElapsedMilliseconds >= onset && hazardTimeCounter.ElapsedMilliseconds <= offset)
             {
+                // if hazard is false and the time is during the window, change to true
                 hazard = true;
                 return hazard;
             }
-            
-            else if (hazardTimeCounter.ElapsedMilliseconds >= hazardTwoOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardTwoOffset)
+            else
             {
-                hazard = true;
                 return hazard;
             }
-            else if (hazardTimeCounter.ElapsedMilliseconds >= hazardThreeOnset && hazardTimeCounter.ElapsedMilliseconds <= hazardThreeOffset)
-            {
-                hazard = true;
-                return hazard;
-            }
-
-        return hazard;
-          
+        
         }
         else if (hazard == true)
         {
-            if (hazardTimeCounter.ElapsedMilliseconds >= hazardOneOffset && hazardTimeCounter.ElapsedMilliseconds <= hazardTwoOnset)
+            if (hazardTimeCounter.ElapsedMilliseconds >= offset)
             {
+                //if the timer is outside the window, turn hazard to false
                 hazard = false;
                 return hazard;
             }
-            
-            else if (hazardTimeCounter.ElapsedMilliseconds >= hazardTwoOffset && hazardTimeCounter.ElapsedMilliseconds <= hazardThreeOnset)
+            else
             {
-                hazard = false;
                 return hazard;
             }
-            else if (hazardTimeCounter.ElapsedMilliseconds >= hazardThreeOffset)
-            {
-                hazard = false;
-                return hazard;
-            }
-            
-       return hazard;
         }
-
         return hazard;
     }
     // Function to check whether the Spawner should be active or not, as well as time windows for when hazard gems should spawn.
     public bool CheckSpawn()
     {
-         currentState =  HazardSpawnerScript.GetComponent<HazardSpawner>().spawnerActive;
+        currentState = HazardSpawnerScript.GetComponent<HazardSpawner>().spawnerActive;
 
         if (currentState == false && hazard == true)
         {
@@ -157,6 +140,57 @@ public class HazardOnsetManager : MonoBehaviour
         
         return currentState; 
 
+    }
+    
+    public string GetCurrentClip()
+    {
+        //return FileReaderScript.GetComponent<FileReader>().currentClip;
+        return ReceiveUDPScript.GetComponent<ReceiveUDP>().receivedString;
+    }
+
+    public int GetClipIndex()
+    {
+        return HazardListScript.GetComponent<CSVReader>().CurrentClipIndex();
+    }
+    
+    public string GetClipName()
+    {
+        //function to retrieve the current clip
+       return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].ClipName;
+    }
+
+    public int GetHazardLocation()
+    {
+        //function to retrieve the hazard location for the spawner
+       return  HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].Location;
+    }
+
+    public float GetHazardOnset()
+    {
+        //function to retrieve the hazard onset
+       return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].Onset;
+    }
+
+    public float GetHazardOffset()
+    {
+        // function to retrieve the hazard offset.
+       return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].Offset;
+    }
+
+    public float GetClipLength()
+    {
+        // function to retrieve the hazard offset.
+       return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].Length;
+    }
+    public void StopwatchStart()
+    {  //Function to start the stopwatch when the button is pressed
+       hazardTimeCounter.Start();
+    }
+
+    public void StopwatchReset()
+    {
+       hazardTimeCounter.Stop();
+       hazardTimeCounter.Reset();
     }
 
 }
