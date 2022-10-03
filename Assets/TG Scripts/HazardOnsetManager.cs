@@ -14,6 +14,7 @@ public class HazardOnsetManager : MonoBehaviour
     public GameObject HazardSpawnerScript;
     public GameObject HazardListScript;
     public GameObject FileReaderScript;
+    public GameObject ReceiveUDPScript;
 
 
     public string clipName;
@@ -23,6 +24,7 @@ public class HazardOnsetManager : MonoBehaviour
     public float offset;
     public float length;
     public int clipRef;
+    public bool stopwatchRunning;
     [SerializeField]public string currentClip;
     [SerializeField] public long timer;
     //string[] hazardList = HazardListScript.GetComponent<CSVReader>().myHazardList.hazard.ClipName;
@@ -30,6 +32,7 @@ public class HazardOnsetManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        stopwatchRunning = false;
         currentState = false;
         hazard = false;
         clipName = GetClipName();
@@ -38,7 +41,7 @@ public class HazardOnsetManager : MonoBehaviour
         onset = GetHazardOnset();
         offset = GetHazardOffset();
     }
-// Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
         timer = hazardTimeCounter.ElapsedMilliseconds;
@@ -57,6 +60,7 @@ public class HazardOnsetManager : MonoBehaviour
             length = GetClipLength();
             StopwatchReset();
             StopwatchStart();
+            stopwatchRunning = true;
         }
         
         if (hazardTimeCounter.ElapsedMilliseconds >= length || Input.GetKey("n")) // Input just for debugging
@@ -69,6 +73,7 @@ public class HazardOnsetManager : MonoBehaviour
                 length = GetClipLength();
                 StopwatchReset();
                 StopwatchStart();
+                stopwatchRunning = true;
             }
         //print(hazardTimeCounter.ElapsedMilliseconds);
     }
@@ -139,7 +144,8 @@ public class HazardOnsetManager : MonoBehaviour
     
     public string GetCurrentClip()
     {
-        return FileReaderScript.GetComponent<FileReader>().currentClip;
+        //return FileReaderScript.GetComponent<FileReader>().currentClip;
+        return ReceiveUDPScript.GetComponent<ReceiveUDP>().receivedString;
     }
 
     public int GetClipIndex()
@@ -177,8 +183,7 @@ public class HazardOnsetManager : MonoBehaviour
        return HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].Length;
     }
     public void StopwatchStart()
-    {
-        //Function to start the stopwatch when the button is pressed
+    {  //Function to start the stopwatch when the button is pressed
        hazardTimeCounter.Start();
     }
 

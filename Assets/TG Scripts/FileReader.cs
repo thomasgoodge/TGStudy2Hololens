@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class FileReader : MonoBehaviour
 {
+    public GameObject ReceiveUDPScript;
     
     public string currentClip;
 
@@ -19,9 +20,14 @@ public class FileReader : MonoBehaviour
         return currentClip;
     }
 
+    public string GetCurrentClipUDP()
+    {
+        return ReceiveUDPScript.GetComponent<ReceiveUDP>().receivedString;
+    }
     void Update()
     {
-        ReadString();
+        //ReadString();
+        GetCurrentClipUDP();
     }
 
 }
