@@ -43,25 +43,22 @@ public class HazardOnsetManager : MonoBehaviour
     {    
         timer = hazardTimeCounter.ElapsedMilliseconds;
         hazard = CheckHazard();
-        currentState = CheckSpawn();
+        currentState = CheckSpawn();  
+        currentClip = GetCurrentClip();      
+        /*
+        selectedClip = clipName
+        */
 
         if (clipName != currentClip)
             {
                 StopwatchReset();
                 CheckClip();
-                
             }
+        
         if (hazardTimeCounter.ElapsedMilliseconds >= length)
             {
                 StopwatchReset();
-                CheckClip();
-            }
-
-        if (hazardTimeCounter.ElapsedMilliseconds == 0)
-            {
-                StopwatchReset();
-                CheckClip();
-                
+                currentClip = "";
             }
         
     }
@@ -132,14 +129,13 @@ public class HazardOnsetManager : MonoBehaviour
     
     public void CheckClip()
     {
-        clipRef = GetClipIndex();
-        currentClip = GetCurrentClip();   
+        clipRef = GetClipIndex();  
         onset = GetHazardOnset();
         offset = GetHazardOffset();
         clipName = GetClipName();
         hazardLocation = GetHazardLocation();
         length = GetClipLength(); 
-        if (currentClip != "" )
+        if (currentClip != "" && stopwatchRunning == false)
             {
                 StopwatchStart();
             }

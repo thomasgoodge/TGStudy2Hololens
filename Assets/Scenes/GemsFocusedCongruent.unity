@@ -370,7 +370,6 @@ MonoBehaviour:
   length: 0
   clipRef: 0
   stopwatchRunning: 0
-  trialActive: 0
   currentClip: 
   timer: 0
 --- !u!114 &633938584
@@ -386,7 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centralspawn: {x: 0, y: 0, z: 0}
-  size: {x: 0.5, y: 0.5, z: 0}
+  size: {x: 0.25, y: 0.25, z: 0}
   gemPrefab: {fileID: 279515709371442442, guid: 37c16166738ac934aaa8a68e45be57e3, type: 3}
   hazardRespawnTime: 0
   hazardRespawnRate: 1
