@@ -58,7 +58,7 @@ public class ReceiveUDP : MonoBehaviour
     void ParsePacket()
     {
         // work with receivedBytes
-        Debug.Log("receivedBytes len = " + receivedBytes.Length);
+        //Debug.Log("receivedBytes len = " + receivedBytes.Length);
         Debug.Log(receivedString);
     }
 
@@ -68,6 +68,6 @@ public class ReceiveUDP : MonoBehaviour
         {
             clientData.Close();
         }
-
+  
     }
 }

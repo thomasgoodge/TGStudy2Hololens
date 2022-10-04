@@ -6,7 +6,9 @@ using System;
 public class CSVReader : MonoBehaviour
 {
     public TextAsset textAssetData;
+    public GameObject ReceiveUDPScript;
     public GameObject FileReaderScript;
+
     public int clipIndex;
     public string currClipCSV;
 
@@ -77,7 +79,10 @@ public class CSVReader : MonoBehaviour
     }
     public string GetCurrentClip()
     {
-        return FileReaderScript.GetComponent<FileReader>().currentClip;
+        //return FileReaderScript.GetComponent<FileReader>().currentClip;
+        
+        return ReceiveUDPScript.GetComponent<ReceiveUDP>().receivedString;
+
     }
 
     public int CurrentClipIndex()

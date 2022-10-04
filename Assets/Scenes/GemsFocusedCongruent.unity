@@ -370,6 +370,7 @@ MonoBehaviour:
   length: 0
   clipRef: 0
   stopwatchRunning: 0
+  trialActive: 0
   currentClip: 
   timer: 0
 --- !u!114 &633938584
@@ -412,7 +413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c91a1ab0202af40bfef723f072bc98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ReceiveUDPScript: {fileID: 360619612}
   currentClip: 
 --- !u!1001 &700584536
 PrefabInstance:
@@ -473,6 +473,10 @@ PrefabInstance:
       propertyPath: FileReaderScript
       value: 
       objectReference: {fileID: 633938581}
+    - target: {fileID: 4070688397735756139, guid: 81f529d9b45e72042a81b3eb804a4122, type: 3}
+      propertyPath: ReceiveUDPScript
+      value: 
+      objectReference: {fileID: 360619612}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81f529d9b45e72042a81b3eb804a4122, type: 3}
 --- !u!1 &1014616499
