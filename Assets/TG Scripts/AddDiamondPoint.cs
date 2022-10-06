@@ -8,6 +8,6 @@ public class AddDiamondPoint : MonoBehaviour
       public void AddDiamondScore()
     {
         ScoreManager.instance.diamondScore ++;
-        print("Diamond Hit");
+        //print("Diamond Hit");
     }
 }

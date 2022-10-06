@@ -41,11 +41,13 @@ public class Collisions : MonoBehaviour
         {
             DiamondScore();
             ScoreManagerScript.GetComponent<ScoreManager>().AddDiamondPoint();
+            ScoreManagerScript.GetComponent<ScoreManager>().WriteString();
         }
         else if (collision.collider.tag == "Emerald")
         {
             EmeraldScore();   
             ScoreManagerScript.GetComponent<ScoreManager>().AddEmeraldPoint();
+            ScoreManagerScript.GetComponent<ScoreManager>().WriteString();
         }
     }
 }

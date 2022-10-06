@@ -7,7 +7,7 @@ public class AddEmeraldPoint : MonoBehaviour
      public void AddEmeraldScore()
     {
         ScoreManager.instance.emeraldScore ++;
-        print("Emerald Hit");
+        //print("Emerald Hit");
     }
 
 }
