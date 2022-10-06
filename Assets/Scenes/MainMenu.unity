@@ -1046,12 +1046,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8411142723601204472, guid: 5420d8672df87074ea02954d49dc7384, type: 3}
   m_PrefabInstance: {fileID: 853677465}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 853677467}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07ce979f27056854a918b5d80c519271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &853677467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8411142723601204474, guid: 5420d8672df87074ea02954d49dc7384, type: 3}
+  m_PrefabInstance: {fileID: 853677465}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1001233614
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,6 +2099,30 @@ MonoBehaviour:
           m_StringArgument: LevelSelect
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1428569821}
+        m_TargetAssemblyTypeName: DestroyTarget, Assembly-CSharp
+        m_MethodName: DestroyThisTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1819360447}
+        m_TargetAssemblyTypeName: DestroyTarget, Assembly-CSharp
+        m_MethodName: DestroyThisTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   movingButtonIconText: {fileID: 1830944557}
   compressableButtonVisuals: {fileID: 560095475}
   minCompressPercentage: 0.25
@@ -2479,6 +2508,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuitButton (MM)
       objectReference: {fileID: 0}
+    - target: {fileID: 7034083842046186555, guid: 0574ee8830c22364fa57bc20b04ccbd2, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034083842046186555, guid: 0574ee8830c22364fa57bc20b04ccbd2, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034083842046186555, guid: 0574ee8830c22364fa57bc20b04ccbd2, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 853677467}
+    - target: {fileID: 7034083842046186555, guid: 0574ee8830c22364fa57bc20b04ccbd2, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7034083842046186559, guid: 0574ee8830c22364fa57bc20b04ccbd2, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -2525,6 +2570,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0574ee8830c22364fa57bc20b04ccbd2, type: 3}
+--- !u!1 &1819360446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7034083842046186551, guid: 0574ee8830c22364fa57bc20b04ccbd2, type: 3}
+  m_PrefabInstance: {fileID: 1819360445}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1819360447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819360446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b01e0f8fa714f442867e88b9b09e7c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1830944557
 GameObject:
   m_ObjectHideFlags: 0

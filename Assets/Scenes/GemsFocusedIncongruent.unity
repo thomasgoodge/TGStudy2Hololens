@@ -540,6 +540,7 @@ MonoBehaviour:
   offset: 0
   length: 0
   clipRef: 0
+  stopwatchRunning: 0
   currentClip: 
   timer: 0
 --- !u!114 &668141924
@@ -596,7 +597,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c91a1ab0202af40bfef723f072bc98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ReceiveUDPScript: {fileID: 1571130772}
   currentClip: 
 --- !u!1 &726829036
 GameObject:
@@ -1496,6 +1496,10 @@ PrefabInstance:
       propertyPath: FileReaderScript
       value: 
       objectReference: {fileID: 668141922}
+    - target: {fileID: 4070688397735756139, guid: 81f529d9b45e72042a81b3eb804a4122, type: 3}
+      propertyPath: ReceiveUDPScript
+      value: 
+      objectReference: {fileID: 1571130772}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81f529d9b45e72042a81b3eb804a4122, type: 3}
 --- !u!1 &1957604160 stripped

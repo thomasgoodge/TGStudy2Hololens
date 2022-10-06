@@ -6,8 +6,11 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
-    public Text scoreText;
-    [SerializeField] public int score = 0;
+    public Text diamondScoreText;
+    public Text emeraldScoreText;
+
+    [SerializeField] public int diamondScore = 0;
+    [SerializeField] public int emeraldScore = 0;
 
     [SerializeField] GameObject DiaSpawn;
     [SerializeField] GameObject EmeSpawn;
@@ -24,35 +27,33 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text = "Score: " + score.ToString();
+        diamondScoreText.text = "Diamonds: " + diamondScore.ToString();
+        emeraldScoreText.text = "Emeralds: " + emeraldScore.ToString();
+
     }
 
 
     void Update()
     {
-        score = DiaSpawn.GetComponent<Spawner>().ObjectListLength + EmeSpawn.GetComponent<Spawner>().ObjectListLength;
-        scoreText.text = "Score: " + score.ToString();
+        diamondScoreText.text = "Diamonds: " + diamondScore.ToString();
+        emeraldScoreText.text = "Emeralds: " + emeraldScore.ToString();
+
     }
 
 
     //Functions which modify the score and then output the updated score to the canvas as a string
-    public void AddPoint()
+    public void AddDiamondPoint()
     {
-        score += 1;
-        scoreText.text = "Score: " + score.ToString();
-        //Debug.Log(score);
+        diamondScore ++;
+        print("Diamond score = " + diamondScore);
+        
     }
 
-    public void SubtractPoint()
+    public void AddEmeraldPoint()
     {
-        score -= 1;
-        scoreText.text = "Score: " + score.ToString();
+        emeraldScore ++;
+        print("Emerald Score = " + emeraldScore);
     }
 
-    public void HazardPoint()
-    {
-        score += 3;
-        scoreText.text = "Score: " + score.ToString();
-    }
 }
 

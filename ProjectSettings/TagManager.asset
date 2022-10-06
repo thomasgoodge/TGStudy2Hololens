@@ -12,6 +12,9 @@ TagManager:
   - Gem
   - Congruent
   - Incongruent
+  - Diamond
+  - Emerald
+  - Ruby
   layers:
   - Default
   - TransparentFX

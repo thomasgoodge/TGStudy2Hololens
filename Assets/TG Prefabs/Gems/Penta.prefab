@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3130339735828763074}
   - component: {fileID: 8783302830303566511}
   - component: {fileID: -5369094300814370866}
+  - component: {fileID: -7771069906929816796}
   m_Layer: 0
   m_Name: Penta
   m_TagString: Gem
@@ -135,31 +136,7 @@ MonoBehaviour:
   dwellTimeInSec: 0.8
   onLookAtStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8783302830303566511}
-        m_TargetAssemblyTypeName: SpawnParticles, Assembly-CSharp
-        m_MethodName: SpawnParticleSystem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-      - m_Target: {fileID: -5369094300814370866}
-        m_TargetAssemblyTypeName: DestroyTarget, Assembly-CSharp
-        m_MethodName: DestroyThisTarget
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
   whileLookingAtTarget:
     m_PersistentCalls:
       m_Calls:
@@ -186,10 +163,22 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
   onLookAway:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -7771069906929816796}
+        m_TargetAssemblyTypeName: AddEmeraldPoint, Assembly-CSharp
+        m_MethodName: AddEmeraldScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDwell:
     m_PersistentCalls:
       m_Calls: []
@@ -337,8 +326,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4b2661a1fb9b04194df1847f013063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ExplosionParticles: {fileID: 4164994674942193377, guid: 0e281c4f7f09d5145885d99473351ce7, type: 3}
   leftExplosionParticles: {fileID: 4164994674942193377, guid: 0e281c4f7f09d5145885d99473351ce7, type: 3}
   rightExplosionParticles: {fileID: 4164994674942193377, guid: 0e281c4f7f09d5145885d99473351ce7, type: 3}
+  score: 0
+  Destroyed: 0
 --- !u!114 &-5369094300814370866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,5 +341,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b01e0f8fa714f442867e88b9b09e7c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7771069906929816796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4489212933387002418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc528da64c3911b4ebbbf4b8a7eac808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

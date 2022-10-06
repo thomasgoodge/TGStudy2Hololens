@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnParticles : MonoBehaviour
 {
+    [SerializeField] ParticleSystem ExplosionParticles;
     [SerializeField] ParticleSystem leftExplosionParticles;
     [SerializeField] ParticleSystem rightExplosionParticles;
     
@@ -22,6 +23,11 @@ public class SpawnParticles : MonoBehaviour
 
 
     {
+
+        currentVectorPosition = this.transform.position;
+        Instantiate(ExplosionParticles);
+        
+        ExplosionParticles.transform.position = currentVectorPosition;
         //Method that destroys the current game object. Used as a method called when object is focused on in the Hololens
         Instantiate(leftExplosionParticles);
         leftExplosionParticles.transform.position = leftColumn;

@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7182711784151288835}
   - component: {fileID: -1165555981268613972}
   - component: {fileID: -4477282243351657447}
+  - component: {fileID: 7747929674959278463}
   m_Layer: 0
   m_Name: Cubie
   m_TagString: Untagged
@@ -322,6 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4b2661a1fb9b04194df1847f013063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ExplosionParticles: {fileID: 0}
   leftExplosionParticles: {fileID: 5597919307946809704, guid: 9a892953d0c582f4fb6bfffbb43072a9, type: 3}
   rightExplosionParticles: {fileID: 5597919307946809704, guid: 9a892953d0c582f4fb6bfffbb43072a9, type: 3}
   score: 0
@@ -338,3 +340,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b01e0f8fa714f442867e88b9b09e7c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7747929674959278463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279515709371442442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03ce757245ecf8b44a63dc8388185ea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIScoreScript: {fileID: 0}

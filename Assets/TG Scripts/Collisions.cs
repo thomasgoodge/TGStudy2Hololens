@@ -3,55 +3,49 @@ using UnityEngine;
 public class Collisions : MonoBehaviour
 {
     //Initiliase the audio clips for when objects collide
-    [SerializeField] private AudioClip Pop;
+    /*[SerializeField] private AudioClip Pop;
     [SerializeField] private AudioClip Blop;
     [SerializeField] private AudioClip Clink;
     [SerializeField] ParticleSystem targetParticles;
     [SerializeField] ParticleSystem enemyParticles;
     [SerializeField] ParticleSystem hazardParticles;
     private AudioSource audiosource;
+    */
+    //public GameObject UIScoreScript;
+
+    public GameObject ScoreManagerScript;
 
     private void Start()
     {
-        audiosource = GetComponent<AudioSource>();
+        //audiosource = GetComponent<AudioSource>();
+    }
+    
+    public void DiamondScore()
+    {
+        
+      // UIScoreScript.GetComponent<ScoreManager>().AddDiamondPoint();
+      print("Diamond");
+    }
+
+    public void EmeraldScore()
+    {
+        print("Emerald");
+       // UIScoreScript.GetComponent<ScoreManager>().AddEmeraldPoint();
     }
 
     void OnCollisionEnter(Collision collision)
     {
         //Register collisions depending on the tags for the objects.
         //Play audio clip for each type of sphere. (AtPoint instead of OneShot because there are multiple different types of audio clips to play)
-        if (collision.collider.tag == "Player")
+        if (collision.collider.tag == "Diamond")
         {
-            Destroy(collision.gameObject);
+            DiamondScore();
+            ScoreManagerScript.GetComponent<ScoreManager>().AddDiamondPoint();
         }
-        else if (collision.collider.tag == "Target Sphere")
+        else if (collision.collider.tag == "Emerald")
         {
-            ScoreManager.instance.AddPoint();
-            AudioSource.PlayClipAtPoint(Blop, transform.position, 0.5f);
-            targetParticles.Play();
-            Destroy(collision.gameObject);
-            //Debug.Log("Hit!");
+            EmeraldScore();   
+            ScoreManagerScript.GetComponent<ScoreManager>().AddEmeraldPoint();
         }
-
-        else if (collision.collider.tag ==  "Hazard Sphere")
-        {
-            ScoreManager.instance.HazardPoint();
-            AudioSource.PlayClipAtPoint(Clink, transform.position, 0.5f);
-            hazardParticles.Play();
-            Destroy(collision.gameObject);
-            //Debug.Log("Hit!");
-        }    
-        else if (collision.collider.tag == "Enemy")
-        {
-            ScoreManager.instance.AddPoint();
-            AudioSource.PlayClipAtPoint(Blop, transform.position, 0.5f);
-            targetParticles.Play();
-            Destroy(collision.gameObject);
-            //Debug.Log("Hit!");
-        }
-
-       // If the object hits the Wall object, destroy it
-            
-            
     }
 }
