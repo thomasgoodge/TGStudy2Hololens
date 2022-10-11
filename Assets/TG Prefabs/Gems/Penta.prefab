@@ -149,9 +149,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  whileLookingAtTarget:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 8783302830303566511}
         m_TargetAssemblyTypeName: SpawnParticles, Assembly-CSharp
         m_MethodName: SpawnParticleSystem
@@ -163,7 +160,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
       - m_Target: {fileID: -5369094300814370866}
         m_TargetAssemblyTypeName: DestroyTarget, Assembly-CSharp
         m_MethodName: DestroyThisTarget
@@ -176,6 +173,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  whileLookingAtTarget:
+    m_PersistentCalls:
+      m_Calls: []
   onLookAway:
     m_PersistentCalls:
       m_Calls: []
