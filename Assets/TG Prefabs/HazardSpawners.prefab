@@ -1,0 +1,270 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6369562719784862616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6369562719784862619}
+  - component: {fileID: 6369562719784862618}
+  - component: {fileID: 225332150}
+  - component: {fileID: 225332151}
+  - component: {fileID: 225332152}
+  m_Layer: 0
+  m_Name: HazardSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6369562719784862619
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6369562719784862616}
+  m_LocalRotation: {x: 0.70710576, y: -0, z: -0, w: 0.7071079}
+  m_LocalPosition: {x: -0.29532906, y: 0.6198037, z: 2}
+  m_LocalScale: {x: 1, y: 1.87, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8466591924430935840}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &6369562719784862618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6369562719784862616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 811aee4ac7d7ba640bf5ba79f3359150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centre: {x: 0, y: 0.1, z: 1.5}
+  size: {x: 0.3, y: 0.3, z: 0}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  itemPrefab: {fileID: 279515709371442442, guid: 37c16166738ac934aaa8a68e45be57e3, type: 3}
+  respawnRate: 3
+  respawnTime: 0
+  counter: 0
+  ObjectList: []
+  ObjectListLength: 0
+--- !u!114 &225332150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6369562719784862616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e0166a501cf2a44a2512bc549c9dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centralspawn: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0, z: 0}
+  gemPrefab: {fileID: 7927207392137251540, guid: 63345ca33c3902e438f3e2a6c2f2bc8c, type: 3}
+  hazardRespawnTime: 0
+  hazardRespawnRate: 1
+  spawnerActive: 0
+  HazardOnsetManagerScript: {fileID: 8466591924430935855}
+  GetSpawnerLocationScript: {fileID: 6369562719784862616}
+  SpawnerLocation: 
+  selectSpawner: 0
+  left: {x: -0.66, y: -0.15, z: 3}
+  centreleft: {x: -0.33, y: -0.15, z: 3}
+  centre: {x: 0, y: -0.15, z: 3}
+  centreright: {x: 0.33, y: -0.15, z: 3}
+  right: {x: 0.66, y: -0.15, z: 3}
+  condition: 
+--- !u!114 &225332151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6369562719784862616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfe471419f6fbad46bb43a6cf15458fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hazard: 0
+  currentState: 0
+  HazardSpawnerScript: {fileID: 6369562719784862616}
+  HazardListScript: {fileID: 0}
+  FileReaderScript: {fileID: 0}
+  ReceiveUDPScript: {fileID: 0}
+  clipName: 
+  location: 0
+  hazardLocation: 0
+  onset: 0
+  offset: 0
+  length: 0
+  clipRef: 0
+  stopwatchRunning: 0
+  currentClip: 
+  timer: 0
+--- !u!114 &225332152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6369562719784862616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e07ffe3c4e2c98469023a2f2ab809b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnerLocationTag: 
+  SpawnerLocation: 
+  spawner: {fileID: 6369562719784862616}
+  left: -0.66
+  centreleft: -0.33
+  centre: 0
+  centreright: 0.33
+  right: 0.66
+--- !u!1 &8466591923337728554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8466591923337728555}
+  - component: {fileID: 8466591923337728556}
+  m_Layer: 0
+  m_Name: EmeraldSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8466591923337728555
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466591923337728554}
+  m_LocalRotation: {x: 0.70710576, y: -0, z: -0, w: 0.7071079}
+  m_LocalPosition: {x: -0.29532906, y: 0.6198037, z: 2.1967108}
+  m_LocalScale: {x: 1, y: 1.87, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8466591924430935840}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &8466591923337728556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466591923337728554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 811aee4ac7d7ba640bf5ba79f3359150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centre: {x: 0, y: 0.1, z: 1.5}
+  size: {x: 1.18, y: 0.5, z: 0}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  itemPrefab: {fileID: 4489212933387002418, guid: ecf032514c17421488d6d0c5b328c428, type: 3}
+  respawnRate: 2.5
+  respawnTime: 0
+  counter: 0
+  ObjectList: []
+  ObjectListLength: 0
+--- !u!1 &8466591924430935855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8466591924430935840}
+  m_Layer: 0
+  m_Name: HazardSpawners
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8466591924430935840
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466591924430935855}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.35055187, y: 0.2807333, z: -0.015890837}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8466591925152066173}
+  - {fileID: 8466591923337728555}
+  - {fileID: 6369562719784862619}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8466591925152066172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8466591925152066173}
+  - component: {fileID: 8466591925152066174}
+  m_Layer: 0
+  m_Name: DiamondSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8466591925152066173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466591925152066172}
+  m_LocalRotation: {x: 0.70710576, y: -0, z: -0, w: 0.7071079}
+  m_LocalPosition: {x: -0.29532906, y: 0.6198037, z: 2}
+  m_LocalScale: {x: 1, y: 1.87, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8466591924430935840}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &8466591925152066174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466591925152066172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 811aee4ac7d7ba640bf5ba79f3359150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centre: {x: 0, y: 0.1, z: 1.5}
+  size: {x: 1.18, y: 0.5, z: 0}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  itemPrefab: {fileID: 7927207392137251540, guid: 63345ca33c3902e438f3e2a6c2f2bc8c, type: 3}
+  respawnRate: 3
+  respawnTime: 0
+  counter: 0
+  ObjectList: []
+  ObjectListLength: 0

@@ -49,6 +49,7 @@ MonoBehaviour:
   emeraldScore: 0
   finalDiamondScore: 
   finalEmeraldScore: 
+  DataLoggerScript: {fileID: 0}
   EmeHazardSpawnerScript: {fileID: 0}
   DiaHazardSpawnerScript: {fileID: 0}
   diamondsSpawned: 0

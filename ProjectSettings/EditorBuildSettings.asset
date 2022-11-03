@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/GemsBasic.unity
     guid: a302b2ecf9426f74d80fdf9042d5417a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GemsFocusedCongruent.unity
     guid: 1efed796e5512894eb7fa26b991a4024
   - enabled: 0
@@ -32,10 +32,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GemsFocusedIncongruent.unity
     guid: 688abea807b879748b4040a6acc7a4f6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GemsFocused.unity
     guid: 3a68894940952a543aaa64bfe95a54d2
   m_configObjects:
