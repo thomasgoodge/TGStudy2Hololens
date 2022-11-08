@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class ScoreManager : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class ScoreManager : MonoBehaviour
 
     public string finalDiamondScore;
     public string finalEmeraldScore;
+    public string folderPath;
 
     public GameObject DataLoggerScript;
     public GameObject EmeHazardSpawnerScript;
@@ -47,7 +50,6 @@ public class ScoreManager : MonoBehaviour
         diamondsSpawned = DiaHazardSpawnerScript.GetComponent<Spawner>().ObjectListLength;
         emeraldsSpawned = EmeHazardSpawnerScript.GetComponent<Spawner>().ObjectListLength;
 
-
     }
 
 
@@ -69,8 +71,12 @@ public class ScoreManager : MonoBehaviour
 
     public void WriteString()
     {
-        string path = Application.persistentDataPath + "/score.txt";
 
+        string filename = "/score.txt";
+
+        string path = Application.persistentDataPath +  filename;
+
+  
         StreamWriter writer = new StreamWriter(path, false);
         writer.WriteLine(diamondScoreText.text);
         writer.WriteLine(emeraldScoreText.text);

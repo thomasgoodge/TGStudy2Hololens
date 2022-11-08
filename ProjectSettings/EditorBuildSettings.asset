@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Control.unity
     guid: 5b4be630ae39fae4a8076c58dd8b5331
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GemsBasic.unity
     guid: a302b2ecf9426f74d80fdf9042d5417a
   - enabled: 0
