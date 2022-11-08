@@ -12,8 +12,8 @@ public class SpawnParticles : MonoBehaviour
 
     Vector3 currentVectorPosition;
 
-    Vector3 leftColumn = new Vector3(-1f, -0.25f, 3.158f);
-    Vector3 rightColumn = new Vector3(1f, -0.25f, 3.158f);
+    Vector3 leftColumn = new Vector3(-1f, -0.25f, 0f);
+    Vector3 rightColumn = new Vector3(1f, -0.25f, 0f);
 
     public int Destroyed = 0;
 
