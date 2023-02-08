@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6369562719784862616}
-  m_LocalRotation: {x: 0.70710576, y: -0, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: -0.29532906, y: 0.6198037, z: 2}
-  m_LocalScale: {x: 1, y: 1.87, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8466591924430935840}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6369562719784862618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centre: {x: 0, y: 0.1, z: 1.5}
-  size: {x: 0.3, y: 0.3, z: 0}
+  size: {x: 0.2, y: 0.3, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
   itemPrefab: {fileID: 279515709371442442, guid: 37c16166738ac934aaa8a68e45be57e3, type: 3}
   respawnRate: 3
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centre: {x: 0, y: 0.1, z: 1.5}
-  size: {x: 1.18, y: 0.5, z: 0}
+  size: {x: 0.8, y: 0.5, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
   itemPrefab: {fileID: 4489212933387002418, guid: ecf032514c17421488d6d0c5b328c428, type: 3}
   respawnRate: 2.5
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centre: {x: 0, y: 0.1, z: 1.5}
-  size: {x: 1.18, y: 0.5, z: 0}
+  size: {x: 0.8, y: 0.5, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
   itemPrefab: {fileID: 7927207392137251540, guid: 63345ca33c3902e438f3e2a6c2f2bc8c, type: 3}
   respawnRate: 3

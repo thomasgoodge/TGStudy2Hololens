@@ -496,11 +496,11 @@ PrefabInstance:
     - target: {fileID: 7618871824093325753, guid: f9605650789051b4f9dab0fbb801d5fb, type: 3}
       propertyPath: DiaHazardSpawnerScript
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2090661515}
     - target: {fileID: 7618871824093325753, guid: f9605650789051b4f9dab0fbb801d5fb, type: 3}
       propertyPath: EmeHazardSpawnerScript
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2090661516}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9605650789051b4f9dab0fbb801d5fb, type: 3}
 --- !u!114 &565685981 stripped
@@ -693,6 +693,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 328913961}
     m_Modifications:
+    - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2090661518}
+    - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 2090661526}
+    - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: StartSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: StartSpawner
+      objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641940, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: m_Name
       value: SpawnerStartButton
@@ -1109,6 +1129,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4576112777128385624, guid: adff9ff6e96755943b0f7d609dbfe42b, type: 3}
   m_PrefabInstance: {fileID: 660001002}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1721833654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4070688397735756136, guid: 81f529d9b45e72042a81b3eb804a4122, type: 3}
+  m_PrefabInstance: {fileID: 1957604159}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1927029744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1173,10 +1198,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 641394362982409528, guid: 4cdf6dffd67e8434884b2c8fe85da3a5, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 641394363191424522, guid: 4cdf6dffd67e8434884b2c8fe85da3a5, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1283,20 +1304,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4070688397735756139, guid: 81f529d9b45e72042a81b3eb804a4122, type: 3}
-      propertyPath: FileReaderScript
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4070688397735756139, guid: 81f529d9b45e72042a81b3eb804a4122, type: 3}
       propertyPath: ReceiveUDPScript
       value: 
       objectReference: {fileID: 1571130772}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81f529d9b45e72042a81b3eb804a4122, type: 3}
---- !u!1 &1957604160 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4070688397735756136, guid: 81f529d9b45e72042a81b3eb804a4122, type: 3}
-  m_PrefabInstance: {fileID: 1957604159}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2090661514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1304,18 +1316,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 225332150, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
-      propertyPath: gemPrefab
-      value: 
-      objectReference: {fileID: 279515709371442442, guid: 37c16166738ac934aaa8a68e45be57e3, type: 3}
-    - target: {fileID: 225332150, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
-      propertyPath: GetSpawnerLocationScript
-      value: 
-      objectReference: {fileID: 2090661517}
     - target: {fileID: 225332151, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
       propertyPath: HazardListScript
       value: 
-      objectReference: {fileID: 1957604160}
+      objectReference: {fileID: 1721833654}
     - target: {fileID: 225332151, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
       propertyPath: ReceiveUDPScript
       value: 
@@ -1380,8 +1384,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8466591923337728554, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
   m_PrefabInstance: {fileID: 2090661514}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2090661517 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6369562719784862616, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
+--- !u!114 &2090661518 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8466591925152066174, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
   m_PrefabInstance: {fileID: 2090661514}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090661515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 811aee4ac7d7ba640bf5ba79f3359150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2090661526 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8466591923337728556, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
+  m_PrefabInstance: {fileID: 2090661514}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090661516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 811aee4ac7d7ba640bf5ba79f3359150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

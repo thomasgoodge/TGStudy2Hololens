@@ -44,5 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textAssetData: {fileID: 4900000, guid: 9c127958252147845a15b77e3ae37714, type: 3}
+  ReceiveUDPScript: {fileID: 0}
+  FileReaderScript: {fileID: 0}
+  clipIndex: 0
+  currClipCSV: 
   myHazardList:
     hazard: []

@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 641394362982409532}
   - component: {fileID: 641394362982409533}
   - component: {fileID: 641394362982409534}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: EyeTrackingGazePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
