@@ -15,6 +15,7 @@ public class HazardOnsetManager : MonoBehaviour
     public GameObject HazardListScript;
     public GameObject FileReaderScript;
     public GameObject ReceiveUDPScript;
+    public GameObject PauseScript;
 
 
     public string clipName;
@@ -27,6 +28,7 @@ public class HazardOnsetManager : MonoBehaviour
     public bool stopwatchRunning;
     public string currentClip;
     public long timer;
+    public bool isPaused = false;
     //string[] hazardList = HazardListScript.GetComponent<CSVReader>().myHazardList.hazard.ClipName;
 
     // Start is called before the first frame update
@@ -36,7 +38,8 @@ public class HazardOnsetManager : MonoBehaviour
         stopwatchRunning = false;
         currentState = false;
         hazard = false;
-        onset = 100; //Initialise at 100 so it doesn't spawn hazardsy
+        isPaused = false;
+
     }
     // Update is called once per frame
     void Update()
@@ -45,10 +48,9 @@ public class HazardOnsetManager : MonoBehaviour
         hazard = CheckHazard();
         currentState = CheckSpawn();  
         currentClip = GetCurrentClip();      
-        /*
-        selectedClip = clipName
-        */
 
+//Hazard perception
+/*
         if (clipName != currentClip)
             {
                 StopwatchReset();
@@ -60,7 +62,26 @@ public class HazardOnsetManager : MonoBehaviour
                 StopwatchReset();
                 currentClip = "";
             }
-        
+
+*/
+
+//Hazrd Prediction
+        if (clipName != currentClip)
+            {
+                CheckClip();
+                if (currentClip != "") 
+                {
+                    ResumeGame();
+                }
+            }
+        if (hazardTimeCounter.ElapsedMilliseconds >= onset && isPaused == false && currentClip != "")
+        {
+            PauseGame();
+            StopwatchReset();
+            currentClip = "";
+            hazard = false;
+        }
+
     }
 
     public bool CheckHazard()
@@ -68,21 +89,24 @@ public class HazardOnsetManager : MonoBehaviour
         //function that checks whether the hazard is active or not.
         if (hazard == false)
         {
-            if (hazardTimeCounter.ElapsedMilliseconds >= onset && hazardTimeCounter.ElapsedMilliseconds <= offset)
+            if (stopwatchRunning == true && hazardTimeCounter.ElapsedMilliseconds >= onset- 3000)
             {
                 // if hazard is false and the time is during the window, change to true
                 hazard = true;
                 return hazard;
             }
+            
             else
             {
+                hazard = false;
                 return hazard;
             }
         
         }
+        
         else if (hazard == true)
         {
-            if (hazardTimeCounter.ElapsedMilliseconds >= offset)
+            if (hazardTimeCounter.ElapsedMilliseconds >= onset)
             {
                 //if the timer is outside the window, turn hazard to false
                 hazard = false;
@@ -193,6 +217,18 @@ public class HazardOnsetManager : MonoBehaviour
        hazardTimeCounter.Reset();
        stopwatchRunning = false;
     }
+
+    public void PauseGame ()
+        {
+            Time.timeScale = 0;
+            isPaused = true;
+
+        }
+    public void ResumeGame ()
+        {
+            Time.timeScale = 1;
+            isPaused = false;
+        }
 
   
 }

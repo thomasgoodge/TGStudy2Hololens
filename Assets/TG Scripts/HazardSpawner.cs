@@ -53,7 +53,7 @@ public class HazardSpawner : MonoBehaviour
         // Reset the respawn time to a random number within range ( smaller range for hazard gems to increase spawn rate)
         hazardRespawnTime = Random.Range(hazardRespawnRate / 2, hazardRespawnRate * 2);        
         selectSpawner =  HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazardLocation;
-        spawnerActive = HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazard;
+        //spawnerActive = HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazard;
 
        //Select which spawner to use
         if (condition == "GemsFocusedCongruent")
@@ -74,11 +74,11 @@ public class HazardSpawner : MonoBehaviour
             {
                 spawnerActive = false;
             }
-
+    
          //if the spawner is active from the HazardOnsetManager script
         while (spawnerActive && gemCount <= 3)
             {  
-                StartCoroutine("CorSpawnHazardGem", 1.0f);     
+                StartCoroutine("CorSpawnHazardGem", 0.5f);     
                 gemCount++;                                 
             }
 
