@@ -31,6 +31,7 @@ public class HazardSpawner : MonoBehaviour
     public Vector3 centreright =new Vector3(0.33f,-0.15f,3f);
     public Vector3 right = new Vector3(0.66f,-0.15f,3f);
     public string condition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +44,16 @@ public class HazardSpawner : MonoBehaviour
         gemCount = 0;     
         centralspawn = new Vector3(0f, -0.15f, 3f); 
         condition = SceneManager.GetActiveScene().name;
-        
+
+       //Select which spawner to use
+        if (condition == "GemsFocusedCongruent")
+            {
+                setSpawnerLocationCongruent();
+            }
+        else if (condition == "GemsFocusedIncongruent")
+            {
+                setSpawnerLocationIncongruent();
+            }
 
     }
 
@@ -53,28 +63,12 @@ public class HazardSpawner : MonoBehaviour
         // Reset the respawn time to a random number within range ( smaller range for hazard gems to increase spawn rate)
         hazardRespawnTime = Random.Range(hazardRespawnRate / 2, hazardRespawnRate * 2);        
         selectSpawner =  HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazardLocation;
+        
         //spawnerActive = HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazard;
+        spawnerActive = CheckHazardStatus();
+        print("HazardSpawner check");
+        
 
-       //Select which spawner to use
-        if (condition == "GemsFocusedCongruent")
-            {
-            setSpawnerLocationCongruent();
-            }
-        else if (condition == "GemsFocusedIncongruent")
-            {
-            setSpawnerLocationIncongruent();
-            }
-
-        // Decide when to activate the spawner
-        if (HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazard == true)
-            {
-                spawnerActive = true;
-            }
-        else if (HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazard == false)
-            {
-                spawnerActive = false;
-            }
-    
          //if the spawner is active from the HazardOnsetManager script
         while (spawnerActive && gemCount <= 3)
             {  
@@ -168,5 +162,21 @@ public class HazardSpawner : MonoBehaviour
                 centralspawn.x = right.x; 
             }
     }
+    public bool CheckHazardStatus()
+        {
+        if (HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazard == true)
+            {
+                spawnerActive = true;
+                print("Active");
+                return spawnerActive;
+            }
+        else if (HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazard == false)
+            {
+                spawnerActive = false;
+                print("Inactive");
+                return spawnerActive;
+            }
+            return spawnerActive;
+        }
 }
 

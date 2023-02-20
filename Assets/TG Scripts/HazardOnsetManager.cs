@@ -65,7 +65,7 @@ public class HazardOnsetManager : MonoBehaviour
 
 */
 
-//Hazrd Prediction
+//Hazard Prediction
         if (clipName != currentClip)
             {
                 CheckClip();
@@ -89,7 +89,7 @@ public class HazardOnsetManager : MonoBehaviour
         //function that checks whether the hazard is active or not.
         if (hazard == false)
         {
-            if (stopwatchRunning == true && hazardTimeCounter.ElapsedMilliseconds >= onset- 3000)
+            if (stopwatchRunning == true && hazardTimeCounter.ElapsedMilliseconds >= onset- 1000)
             {
                 // if hazard is false and the time is during the window, change to true
                 hazard = true;

@@ -1067,6 +1067,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1801229130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6369562719784862616, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
+  m_PrefabInstance: {fileID: 6369562719832983597}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1803624076 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7618871823976627587, guid: f9605650789051b4f9dab0fbb801d5fb, type: 3}
@@ -1085,6 +1090,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 641394362982409528, guid: 4cdf6dffd67e8434884b2c8fe85da3a5, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 641394363191424522, guid: 4cdf6dffd67e8434884b2c8fe85da3a5, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1143,6 +1152,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1369320521}
     m_Modifications:
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 3250011187430449747}
@@ -1151,12 +1164,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3250011188029544961}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: StartSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
       value: StartSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641940, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: m_Name
@@ -1356,6 +1377,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 225332150, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
+      propertyPath: gemPrefab
+      value: 
+      objectReference: {fileID: 279515709371442442, guid: 37c16166738ac934aaa8a68e45be57e3, type: 3}
+    - target: {fileID: 225332150, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
+      propertyPath: spawnerActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 225332150, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
+      propertyPath: HazardOnsetManagerScript
+      value: 
+      objectReference: {fileID: 1801229130}
     - target: {fileID: 225332151, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
       propertyPath: PauseScript
       value: 
