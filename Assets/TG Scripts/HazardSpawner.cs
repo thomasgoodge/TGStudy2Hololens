@@ -44,17 +44,6 @@ public class HazardSpawner : MonoBehaviour
         gemCount = 0;     
         centralspawn = new Vector3(0f, -0.15f, 3f); 
         condition = SceneManager.GetActiveScene().name;
-
-       //Select which spawner to use
-        if (condition == "GemsFocusedCongruent")
-            {
-                setSpawnerLocationCongruent();
-            }
-        else if (condition == "GemsFocusedIncongruent")
-            {
-                setSpawnerLocationIncongruent();
-            }
-
     }
 
     // Update is called once per frame
@@ -66,9 +55,7 @@ public class HazardSpawner : MonoBehaviour
         
         //spawnerActive = HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazard;
         spawnerActive = CheckHazardStatus();
-        print("HazardSpawner check");
-        
-
+    
          //if the spawner is active from the HazardOnsetManager script
         while (spawnerActive && gemCount <= 3)
             {  
@@ -81,7 +68,15 @@ public class HazardSpawner : MonoBehaviour
                 StopCoroutine("CorSpawnHazardGem");
                 gemCount = 0;
             }
-    
+        //Select which spawner to use
+        if (condition == "GemsFocusedCongruent")
+            {
+                setSpawnerLocationCongruent();
+            }
+        else if (condition == "GemsFocusedIncongruent")
+            {
+                setSpawnerLocationIncongruent();
+            }
     }
 
     void OnDrawGizmosSelected()

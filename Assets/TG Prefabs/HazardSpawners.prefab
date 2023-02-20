@@ -69,11 +69,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   centralspawn: {x: 0, y: 0, z: 0}
   size: {x: 0, y: 0, z: 0}
-  gemPrefab: {fileID: 7927207392137251540, guid: 63345ca33c3902e438f3e2a6c2f2bc8c, type: 3}
+  gemPrefab: {fileID: 279515709371442442, guid: 37c16166738ac934aaa8a68e45be57e3, type: 3}
   hazardRespawnTime: 0
   hazardRespawnRate: 1
   spawnerActive: 0
-  HazardOnsetManagerScript: {fileID: 8466591924430935855}
+  HazardOnsetManagerScript: {fileID: 6369562719784862616}
   GetSpawnerLocationScript: {fileID: 6369562719784862616}
   SpawnerLocation: 
   selectSpawner: 0
@@ -101,6 +101,7 @@ MonoBehaviour:
   HazardListScript: {fileID: 0}
   FileReaderScript: {fileID: 0}
   ReceiveUDPScript: {fileID: 0}
+  PauseScript: {fileID: 0}
   clipName: 
   location: 0
   hazardLocation: 0
@@ -111,6 +112,7 @@ MonoBehaviour:
   stopwatchRunning: 0
   currentClip: 
   timer: 0
+  isPaused: 0
 --- !u!114 &225332152
 MonoBehaviour:
   m_ObjectHideFlags: 0

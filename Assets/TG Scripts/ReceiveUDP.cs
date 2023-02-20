@@ -7,7 +7,7 @@ using UnityEngine;
 public class ReceiveUDP : MonoBehaviour
 {
     UdpClient clientData;
-    int portData = 5006;
+    public int portData = 5006;
     public int receiveBufferSize = 120000;
 
     public bool showDebug = false;

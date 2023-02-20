@@ -19,7 +19,6 @@ public class HazardOnsetManager : MonoBehaviour
 
 
     public string clipName;
-    public int location;
     public int hazardLocation;
     public float onset;
     public float offset;
@@ -29,6 +28,9 @@ public class HazardOnsetManager : MonoBehaviour
     public string currentClip;
     public long timer;
     public bool isPaused = false;
+
+    List<string> ClipList = new List<string>();
+
     //string[] hazardList = HazardListScript.GetComponent<CSVReader>().myHazardList.hazard.ClipName;
 
     // Start is called before the first frame update
