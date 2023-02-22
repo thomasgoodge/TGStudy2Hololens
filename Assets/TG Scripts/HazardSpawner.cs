@@ -69,14 +69,16 @@ public class HazardSpawner : MonoBehaviour
                 gemCount = 0;
             }
         //Select which spawner to use
-        if (condition == "GemsFocusedCongruent")
+        if (condition == "GemsCued")
             {
                 setSpawnerLocationCongruent();
             }
+            /*
         else if (condition == "GemsFocusedIncongruent")
             {
                 setSpawnerLocationIncongruent();
             }
+            */
     }
 
     void OnDrawGizmosSelected()
