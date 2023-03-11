@@ -25,24 +25,24 @@ public class HazardSpawner : MonoBehaviour
     public string SpawnerLocation;
     public int selectSpawner;
 
-    public Vector3 left = new Vector3(-0.66f,-0.15f,3f);
-    public Vector3 centreleft = new Vector3(-0.33f,-0.15f,3f);
-    public Vector3 centre = new Vector3(0f,-0.15f,3f);
-    public Vector3 centreright =new Vector3(0.33f,-0.15f,3f);
-    public Vector3 right = new Vector3(0.66f,-0.15f,3f);
+    public Vector3 left = new Vector3(-0.2f,0f,1.5f);
+    public Vector3 centreleft = new Vector3(-0.33f,0f,1.5f);
+    public Vector3 centre = new Vector3(0f,0f,1.5f);
+    public Vector3 centreright =new Vector3(0.33f,0f,1.5f);
+    public Vector3 right = new Vector3(0.2f,0f,1.5f);
     public string condition;
 
     // Start is called before the first frame update
     void Start()
     {
-        left = new Vector3(-0.66f,-0.15f,3f);
-        centreleft = new Vector3(-0.33f,-0.15f,3f);
-        centre = new Vector3(0f,-0.15f,3f);
-        centreright =new Vector3(0.33f,-0.15f,3f);
-        right = new Vector3(0.66f,-0.15f,3f);
+        left = new Vector3(-0.2f,0f,1.5f);
+        centreleft = new Vector3(-0.33f,0f,1.5f);
+        centre = new Vector3(0f,0f,1.5f);
+        centreright =new Vector3(0.33f,0f,1.5f);
+        right = new Vector3(0.2f,0f,1.50f);
         spawnerActive = false;
         gemCount = 0;     
-        centralspawn = new Vector3(0f, -0.15f, 3f); 
+        centralspawn = new Vector3(0f, 0f, 1.5f); 
         condition = SceneManager.GetActiveScene().name;
     }
 
@@ -69,7 +69,7 @@ public class HazardSpawner : MonoBehaviour
                 gemCount = 0;
             }
         //Select which spawner to use
-        if (condition == "GemsCued")
+        if (condition == "GemsCued"|| condition == "AHTest")
             {
                 setSpawnerLocationCongruent();
             }
@@ -164,13 +164,13 @@ public class HazardSpawner : MonoBehaviour
         if (HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazard == true)
             {
                 spawnerActive = true;
-                print("Active");
+               // print("Active");
                 return spawnerActive;
             }
         else if (HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().hazard == false)
             {
                 spawnerActive = false;
-                print("Inactive");
+               // print("Inactive");
                 return spawnerActive;
             }
             return spawnerActive;

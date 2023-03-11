@@ -17,11 +17,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Control.unity
     guid: 5b4be630ae39fae4a8076c58dd8b5331
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GemsBasic.unity
     guid: a302b2ecf9426f74d80fdf9042d5417a
   - enabled: 1
-    path: Assets/Scenes/GemsCUed.unity
+    path: Assets/Scenes/GemsCued.unity
     guid: 1efed796e5512894eb7fa26b991a4024
   - enabled: 0
     path: 
@@ -32,12 +32,18 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/GemsFocusedIncongruent.unity
-    guid: 688abea807b879748b4040a6acc7a4f6
   - enabled: 0
-    path: Assets/Scenes/GemsFocused.unity
-    guid: 3a68894940952a543aaa64bfe95a54d2
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/HDD.unity
+    guid: 9368bfd2990f61b40ae8e4519896a5fe
+  - enabled: 1
+    path: Assets/Scenes/AHTest.unity
+    guid: 851bae1d4b1a39d4a92d317d52c3c522
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 4466761e23691764ea0ec13e65c702a1, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 19637e978bb5e5c43864d28ef364043f, type: 2}

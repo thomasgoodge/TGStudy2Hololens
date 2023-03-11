@@ -55,7 +55,7 @@ public class CSVReader : MonoBehaviour
         string[] data = textAssetData.text.Split(new string [] { ",", "\n" }, StringSplitOptions.None);
         //each cell is new data point in string
 
-        int tableSize = data.Length / 5 - 1;
+        int tableSize = data.Length /5  - 1;
         
         myHazardList.hazard = new Hazard[tableSize];
 

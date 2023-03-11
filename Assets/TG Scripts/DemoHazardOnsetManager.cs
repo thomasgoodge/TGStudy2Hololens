@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
-public class HazardOnsetManager : MonoBehaviour
+public class DemoHazardOnsetManager : MonoBehaviour
 {
     // Create counters for time and number of gems, as well as initialising a respawn time
     public bool hazard;
@@ -65,8 +65,8 @@ public class HazardOnsetManager : MonoBehaviour
                 currentClip = "";
             }
 
-/*
 
+/*
 //Hazard Prediction
         if (clipName != currentClip)
             {
