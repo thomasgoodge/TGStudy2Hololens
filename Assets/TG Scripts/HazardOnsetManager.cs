@@ -52,6 +52,7 @@ public class HazardOnsetManager : MonoBehaviour
         currentClip = GetCurrentClip();      
 
 //Hazard perception
+/*
 
         if (clipName != currentClip)
             {
@@ -64,8 +65,8 @@ public class HazardOnsetManager : MonoBehaviour
                 StopwatchReset();
                 currentClip = "";
             }
+*/
 
-/*
 
 //Hazard Prediction
         if (clipName != currentClip)
@@ -87,7 +88,7 @@ public class HazardOnsetManager : MonoBehaviour
             currentClip = "";
             hazard = false;
         }
-*/
+
     }
 
     public bool CheckHazard()
