@@ -1232,7 +1232,7 @@ MonoBehaviour:
   size: {x: 2, y: 0.5, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
   itemPrefab: {fileID: 4489212933387002418, guid: ecf032514c17421488d6d0c5b328c428, type: 3}
-  respawnRate: 2
+  respawnRate: 1.5
   respawnTime: 0
 --- !u!1 &544710307
 GameObject:
@@ -2850,9 +2850,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2516680390051765993, guid: 2f36a957b38b2e847a38f62422daf825, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516680390061038138, guid: 2f36a957b38b2e847a38f62422daf825, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516680390575789013, guid: 2f36a957b38b2e847a38f62422daf825, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516680390818061732, guid: 2f36a957b38b2e847a38f62422daf825, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516680391484948949, guid: 2f36a957b38b2e847a38f62422daf825, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082225007503311170, guid: 2f36a957b38b2e847a38f62422daf825, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5760049235269628643, guid: 2f36a957b38b2e847a38f62422daf825, type: 3}
       propertyPath: m_Name
       value: ScreenCalibrationCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760049235269628660, guid: 2f36a957b38b2e847a38f62422daf825, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5760049235269628662, guid: 2f36a957b38b2e847a38f62422daf825, type: 3}
       propertyPath: m_RootOrder
@@ -2902,6 +2930,18 @@ PrefabInstance:
       propertyPath: constraintTransform
       value: 
       objectReference: {fileID: 1879749978}
+    - target: {fileID: 7923256483737382222, guid: 2f36a957b38b2e847a38f62422daf825, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155139963605824614, guid: 2f36a957b38b2e847a38f62422daf825, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377087051900106869, guid: 2f36a957b38b2e847a38f62422daf825, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f36a957b38b2e847a38f62422daf825, type: 3}
 --- !u!1 &777929592
@@ -5753,7 +5793,7 @@ MonoBehaviour:
   size: {x: 2, y: 0.5, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
   itemPrefab: {fileID: 7927207392137251540, guid: 63345ca33c3902e438f3e2a6c2f2bc8c, type: 3}
-  respawnRate: 2
+  respawnRate: 0.5
   respawnTime: 0
 --- !u!1 &1435098662
 GameObject:

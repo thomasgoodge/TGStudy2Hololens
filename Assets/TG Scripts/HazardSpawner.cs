@@ -35,11 +35,12 @@ public class HazardSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        left = new Vector3(-0.2f,0f,1.5f);
-        centreleft = new Vector3(-0.33f,0f,1.5f);
+        //define the vector co-ordinates for the spawner locations
+        left = new Vector3(-0.33f,0f,1.5f);
+        centreleft = new Vector3(-0.2f,0f,1.5f);
         centre = new Vector3(0f,0f,1.5f);
-        centreright =new Vector3(0.33f,0f,1.5f);
-        right = new Vector3(0.2f,0f,1.50f);
+        centreright =new Vector3(0.2f,0f,1.5f);
+        right = new Vector3(0.33f,0f,1.50f);
         spawnerActive = false;
         gemCount = 0;     
         centralspawn = new Vector3(0f, 0f, 1.5f); 
@@ -90,9 +91,9 @@ public class HazardSpawner : MonoBehaviour
 
     IEnumerator CorSpawnHazardGem()
     {
-        while (gemCount <= 4)
+        while (gemCount <= 3)
             {     
-                // if there are less than 5 gems, spawn a gem in the range of the spawner
+                // if there are less than 3 gems, spawn a gem in the range of the spawner
                 Vector3 pos = centralspawn + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
                 GameObject alpha = Instantiate(gemPrefab, pos, Quaternion.identity);
                 gemCount++;

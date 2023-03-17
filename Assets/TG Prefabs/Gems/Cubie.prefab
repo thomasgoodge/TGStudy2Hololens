@@ -35,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 279515709371442442}
   m_LocalRotation: {x: -0.70710576, y: -0, z: -0, w: 0.70710784}
   m_LocalPosition: {x: 3.684, y: 0.00000049924915, z: 1.4219996}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.0250505, y: 0.0250505, z: 0.0250505}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -133,7 +133,31 @@ MonoBehaviour:
   dwellTimeInSec: 0.8
   onLookAtStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -1165555981268613972}
+        m_TargetAssemblyTypeName: SpawnParticles, Assembly-CSharp
+        m_MethodName: SpawnParticleSystem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -4477282243351657447}
+        m_TargetAssemblyTypeName: DestroyTarget, Assembly-CSharp
+        m_MethodName: DestroyThisTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   whileLookingAtTarget:
     m_PersistentCalls:
       m_Calls:
@@ -311,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4b2661a1fb9b04194df1847f013063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExplosionParticles: {fileID: 0}
+  ExplosionParticles: {fileID: 5597919307946809704, guid: 9a892953d0c582f4fb6bfffbb43072a9, type: 3}
   leftExplosionParticles: {fileID: 5597919307946809704, guid: 9a892953d0c582f4fb6bfffbb43072a9, type: 3}
   rightExplosionParticles: {fileID: 5597919307946809704, guid: 9a892953d0c582f4fb6bfffbb43072a9, type: 3}
   score: 0

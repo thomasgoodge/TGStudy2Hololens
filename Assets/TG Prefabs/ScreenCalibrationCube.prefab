@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 5760049235269628669}
   - component: {fileID: 5760049235269628663}
   - component: {fileID: 3993265433522996717}
-  - component: {fileID: 32897725}
+  - component: {fileID: 3744930015148185025}
   m_Layer: 0
   m_Name: ScreenCalibrationCube
   m_TagString: Player
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreManagerScript: {fileID: 0}
---- !u!114 &32897725
+--- !u!114 &3744930015148185025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -308,12 +308,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5760049235269628643}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149fa3ae453128b41940b5caa905f8ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b3e6359c9750ad4fb8a05c9b8704d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   handType: 3
   proximityType: 3
-  constraintOnMovement: 2
+  constraintOnRotation: 0
   useLocalSpaceForConstraint: 0
 --- !u!1001 &9107698612508557417
 PrefabInstance:
