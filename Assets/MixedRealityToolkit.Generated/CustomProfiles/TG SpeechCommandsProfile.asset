@@ -52,21 +52,21 @@ MonoBehaviour:
       description: Toggle Profiler
       axisConstraint: 0
   - localizationKey: 
-    keyword: Global
-    keyCode: 0
-    action:
-      id: 0
-      description: Toggle Profiler
-      axisConstraint: 0
-  - localizationKey: 
-    keyword: Local
-    keyCode: 0
-    action:
-      id: 0
-      description: Toggle Profiler
-      axisConstraint: 0
-  - localizationKey: 
     keyword: Control
+    keyCode: 0
+    action:
+      id: 0
+      description: Toggle Profiler
+      axisConstraint: 0
+  - localizationKey: 
+    keyword: One
+    keyCode: 0
+    action:
+      id: 0
+      description: Toggle Profiler
+      axisConstraint: 0
+  - localizationKey: 
+    keyword: Two
     keyCode: 0
     action:
       id: 0
@@ -81,6 +81,13 @@ MonoBehaviour:
       axisConstraint: 0
   - localizationKey: 
     keyword: Quit
+    keyCode: 0
+    action:
+      id: 0
+      description: Toggle Profiler
+      axisConstraint: 0
+  - localizationKey: 
+    keyword: Three
     keyCode: 0
     action:
       id: 0

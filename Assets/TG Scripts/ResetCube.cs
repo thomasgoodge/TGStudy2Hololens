@@ -15,4 +15,13 @@ public class ResetCube : MonoBehaviour
         transform.position = defaultPosition;
         Debug.Log("Cube position reset");
     }
+
+    public void DisableMesh()
+    {
+            //renderer.enabled = true; //(to show the game object)
+
+            GetComponent<Renderer>().enabled = false; //(to hide the game object)
+            Debug.Log("Cube hidden");
+
+    }
 }

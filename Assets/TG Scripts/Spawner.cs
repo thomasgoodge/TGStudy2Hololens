@@ -19,14 +19,27 @@ public class Spawner : MonoBehaviour
 
     public int ObjectListLength;
 
+    public GameObject LeftPillar;
+    Transform LeftPillarTransform;  
+    public GameObject RightPillar;
+    Transform RightPillarTransform;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
+        //Access the Left and Right pillars to get their transforms
+        GameObject LeftPillar = GameObject.Find("Cylinder (L)");
+        LeftPillarTransform = LeftPillar.GetComponent<Transform>();
+        GameObject RightPillar = GameObject.Find("Cylinder (R)");
+        RightPillarTransform = RightPillar.GetComponent<Transform>();
         //if (GameRunning == true)
         //{
 
             //StartCoroutine(SpawnObject());
        //}
+        //devise the centre of the spawner as halfway between the left and right pillar
     }
 
     // Update is called once per frame
@@ -35,6 +48,8 @@ public class Spawner : MonoBehaviour
         //Reset the respawn time to a random number within range 
         respawnTime = Random.Range(respawnRate / 2, respawnRate * 2);
         ObjectListLength = ObjectList.Count;
+        centre.x = (LeftPillarTransform.position.x + RightPillarTransform.position.x) / 2;
+
 
 
     }
@@ -42,6 +57,7 @@ public class Spawner : MonoBehaviour
     public void StartSpawner()
     {
         StartCoroutine(SpawnObject());
+
     }
 
     private IEnumerator SpawnObject()

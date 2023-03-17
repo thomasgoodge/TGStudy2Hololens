@@ -395,6 +395,7 @@ GameObject:
   - component: {fileID: 2770087433488641942}
   - component: {fileID: 2770087433488641943}
   - component: {fileID: 2770087433488641967}
+  - component: {fileID: 548159503}
   m_Layer: 0
   m_Name: SpawnerStartButton
   m_TagString: Untagged
@@ -539,21 +540,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
-        m_MethodName: StartSpawner
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: LevelSelect
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
-        m_MethodName: StartSpawner
+      - m_Target: {fileID: 2770087433488641967}
+        m_TargetAssemblyTypeName: DestroyTarget, Assembly-CSharp
+        m_MethodName: DestroyThisTarget
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -563,9 +552,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2770087433488641967}
-        m_TargetAssemblyTypeName: DestroyTarget, Assembly-CSharp
-        m_MethodName: DestroyThisTarget
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ResetCube, Assembly-CSharp
+        m_MethodName: DisableMesh
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -939,6 +928,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b01e0f8fa714f442867e88b9b09e7c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &548159503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2770087433488641940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b3eff181cc4244a8a14234096e62fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFocusRequired: 1
+  keywords:
+  - keyword: Select
+    response:
+      m_PersistentCalls:
+        m_Calls: []
+  persistentKeywords: 1
+  speechConfirmationTooltipPrefab: {fileID: 8046114618238072051, guid: 271778f6c957b524981067a81d238394, type: 3}
 --- !u!1 &2770087433651519041
 GameObject:
   m_ObjectHideFlags: 0

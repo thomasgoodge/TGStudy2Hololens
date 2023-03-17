@@ -41,7 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HDD.unity
     guid: 9368bfd2990f61b40ae8e4519896a5fe
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AHTest.unity
     guid: 851bae1d4b1a39d4a92d317d52c3c522
   m_configObjects:
