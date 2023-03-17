@@ -55,6 +55,8 @@ MonoBehaviour:
   counter: 0
   ObjectList: []
   ObjectListLength: 0
+  LeftPillar: {fileID: 0}
+  RightPillar: {fileID: 0}
 --- !u!114 &225332150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,7 +105,6 @@ MonoBehaviour:
   ReceiveUDPScript: {fileID: 0}
   PauseScript: {fileID: 0}
   clipName: 
-  location: 0
   hazardLocation: 0
   onset: 0
   offset: 0
@@ -120,7 +121,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6369562719784862616}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e07ffe3c4e2c98469023a2f2ab809b6, type: 3}
   m_Name: 
@@ -185,6 +186,8 @@ MonoBehaviour:
   counter: 0
   ObjectList: []
   ObjectListLength: 0
+  LeftPillar: {fileID: 0}
+  RightPillar: {fileID: 0}
 --- !u!1 &8466591924430935855
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,8 +264,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811aee4ac7d7ba640bf5ba79f3359150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centre: {x: 0, y: 0.1, z: 1.5}
-  size: {x: 0.8, y: 0.5, z: 0}
+  centre: {x: 0, y: 0.09, z: 1.5}
+  size: {x: 0.95, y: 0.52, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
   itemPrefab: {fileID: 7927207392137251540, guid: 63345ca33c3902e438f3e2a6c2f2bc8c, type: 3}
   respawnRate: 3
@@ -270,3 +273,5 @@ MonoBehaviour:
   counter: 0
   ObjectList: []
   ObjectListLength: 0
+  LeftPillar: {fileID: 0}
+  RightPillar: {fileID: 0}
