@@ -917,140 +917,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1 &1122336068
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1122336069}
-  - component: {fileID: 1122336073}
-  - component: {fileID: 1122336072}
-  - component: {fileID: 1122336071}
-  - component: {fileID: 1122336070}
-  m_Layer: 0
-  m_Name: HazardSpawner (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1122336069
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1122336068}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2135304731}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1122336070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1122336068}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e07ffe3c4e2c98469023a2f2ab809b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnerLocationTag: 
-  SpawnerLocation: 
-  spawner: {fileID: 1122336068}
-  left: -0.66
-  centreleft: -0.33
-  centre: 0
-  centreright: 0.33
-  right: 0.66
---- !u!114 &1122336071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1122336068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfe471419f6fbad46bb43a6cf15458fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hazard: 0
-  currentState: 0
-  HazardSpawnerScript: {fileID: 1122336068}
-  HazardListScript: {fileID: 700584537}
-  FileReaderScript: {fileID: 0}
-  ReceiveUDPScript: {fileID: 360619612}
-  PauseScript: {fileID: 517193138}
-  clipName: 
-  hazardLocation: 0
-  onset: 0
-  offset: 0
-  length: 0
-  clipRef: 0
-  stopwatchRunning: 0
-  currentClip: 
-  timer: 0
-  isPaused: 0
---- !u!114 &1122336072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1122336068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32e0166a501cf2a44a2512bc549c9dbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centralspawn: {x: 0, y: 0, z: 0}
-  size: {x: 0, y: 0, z: 0}
-  gemPrefab: {fileID: 279515709371442442, guid: 37c16166738ac934aaa8a68e45be57e3, type: 3}
-  hazardRespawnTime: 0
-  hazardRespawnRate: 1
-  spawnerActive: 0
-  HazardOnsetManagerScript: {fileID: 1122336068}
-  GetSpawnerLocationScript: {fileID: 1122336068}
-  SpawnerLocation: 
-  selectSpawner: 0
-  left: {x: -0.66, y: -0.15, z: 3}
-  centreleft: {x: -0.33, y: -0.15, z: 3}
-  centre: {x: 0, y: -0.15, z: 3}
-  centreright: {x: 0.33, y: -0.15, z: 3}
-  right: {x: 0.66, y: -0.15, z: 3}
-  condition: 
---- !u!114 &1122336073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1122336068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 811aee4ac7d7ba640bf5ba79f3359150, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centre: {x: 0, y: 0.1, z: 1.5}
-  size: {x: 0.3, y: 0.3, z: 0}
-  rotation: {x: 0, y: 0, z: 0, w: 0}
-  itemPrefab: {fileID: 279515709371442442, guid: 37c16166738ac934aaa8a68e45be57e3, type: 3}
-  respawnRate: 3
-  respawnTime: 0
-  counter: 0
-  ObjectList: []
-  ObjectListLength: 0
-  LeftPillar: {fileID: 0}
-  RightPillar: {fileID: 0}
 --- !u!1 &1122575422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,11 +1173,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cdf6dffd67e8434884b2c8fe85da3a5, type: 3}
---- !u!4 &2135304731 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8466591924430935840, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
-  m_PrefabInstance: {fileID: 6369562719832983597}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4079580387549618404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1445,38 +1306,26 @@ PrefabInstance:
       propertyPath: ReceiveUDPScript
       value: 
       objectReference: {fileID: 360619612}
-    - target: {fileID: 6369562719784862618, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
-      propertyPath: size.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8466591923337728556, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
-      propertyPath: size.x
-      value: 0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 8466591923337728556, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
-      propertyPath: size.y
-      value: 0.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 8466591923337728556, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
-      propertyPath: centre.y
-      value: 0.09
-      objectReference: {fileID: 0}
+    - target: {fileID: 1122336071, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
+      propertyPath: PauseScript
+      value: 
+      objectReference: {fileID: 517193138}
+    - target: {fileID: 1122336071, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
+      propertyPath: HazardListScript
+      value: 
+      objectReference: {fileID: 700584537}
+    - target: {fileID: 1122336071, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
+      propertyPath: ReceiveUDPScript
+      value: 
+      objectReference: {fileID: 360619612}
     - target: {fileID: 8466591923337728556, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
       propertyPath: LeftPillar
       value: 
       objectReference: {fileID: 1319835359}
     - target: {fileID: 8466591923337728556, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
-      propertyPath: itemPrefab
-      value: 
-      objectReference: {fileID: 4489212933387002418, guid: ecf032514c17421488d6d0c5b328c428, type: 3}
-    - target: {fileID: 8466591923337728556, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
       propertyPath: RightPillar
       value: 
       objectReference: {fileID: 1314516643}
-    - target: {fileID: 8466591923337728556, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
-      propertyPath: respawnRate
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8466591924430935840, guid: cf3c498d6a194e44a847bb7a4a8d1664, type: 3}
       propertyPath: m_RootOrder
       value: 9

@@ -96,7 +96,7 @@ public class HazardOnsetManager : MonoBehaviour
         //function that checks whether the hazard is active or not.
         if (hazard == false)
         {
-            if (stopwatchRunning == true && hazardTimeCounter.ElapsedMilliseconds >= onset- 1000)
+            if (stopwatchRunning == true && hazardTimeCounter.ElapsedMilliseconds >= onset- 2500)
             {
                 // if hazard is false and the time is during the window, change to true
                 hazard = true;
