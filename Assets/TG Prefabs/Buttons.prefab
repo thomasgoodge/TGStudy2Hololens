@@ -179,7 +179,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 548159503, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 548159503, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -212,11 +212,15 @@ PrefabInstance:
     - target: {fileID: 548159503, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 3514141811396041149}
+      objectReference: {fileID: 0}
     - target: {fileID: 548159503, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 548159503, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
+      propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 3514141811396041149}
     - target: {fileID: 548159503, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -247,19 +251,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 548159503, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: DestroyThisTarget
+      value: StartSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 548159503, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: DestroyThisTarget
+      value: StartSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 548159503, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: StartSpawner
+      value: DisableMesh
       objectReference: {fileID: 0}
     - target: {fileID: 548159503, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: StartSpawner
+      value: DestroyThisTarget
       objectReference: {fileID: 0}
     - target: {fileID: 548159503, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
@@ -271,19 +275,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 548159503, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: DestroyTarget, Assembly-CSharp
+      value: Spawner, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 548159503, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: DestroyTarget, Assembly-CSharp
+      value: Spawner, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 548159503, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: Spawner, Assembly-CSharp
+      value: ResetCube, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 548159503, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: Spawner, Assembly-CSharp
+      value: DestroyTarget, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 548159503, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
@@ -319,39 +323,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 3514141811396041149}
+    - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
-      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: DisableMesh
-      objectReference: {fileID: 0}
-    - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
-      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: StartSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
-      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: StartSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
       value: DisableMesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: DestroyThisTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: Spawner, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
@@ -359,15 +379,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: Spawner, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
-      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
       value: ResetCube, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: DestroyTarget, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2770087433488641938, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -421,7 +441,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4478145322247080005, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2df55d48e927cbb4b93099e9a7281b33, type: 3}
 --- !u!4 &3514141811396041150 stripped
 Transform:

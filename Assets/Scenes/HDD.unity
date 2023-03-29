@@ -651,14 +651,62 @@ PrefabInstance:
       propertyPath: m_Name
       value: Buttons
       objectReference: {fileID: 0}
+    - target: {fileID: 1636476289985197597, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636476289985197597, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1504217179}
+    - target: {fileID: 1636476289985197597, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 894319718}
+    - target: {fileID: 1636476289985197597, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 894319718}
+    - target: {fileID: 1636476289985197597, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DisableMesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636476289985197597, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: DestroyThisTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636476289985197597, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: DestroyThisTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636476289985197597, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ResetCube, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636476289985197597, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: DestroyTarget, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636476289985197597, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: keywords.Array.data[0].response.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: DestroyTarget, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.size
-      value: 6
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 894319718}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
@@ -672,8 +720,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: DestroyThisTarget
       objectReference: {fileID: 0}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
@@ -681,11 +737,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: StartSpawner
+      value: DisableMesh
       objectReference: {fileID: 0}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
       value: DisableMesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: DestroyTarget, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
@@ -696,11 +756,26 @@ PrefabInstance:
       value: ResetCube, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+--- !u!114 &894319718 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3514141811396041149, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+  m_PrefabInstance: {fileID: 894319717}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b01e0f8fa714f442867e88b9b09e7c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &964963825
 GameObject:
   m_ObjectHideFlags: 0

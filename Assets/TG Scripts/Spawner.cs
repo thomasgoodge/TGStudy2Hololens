@@ -33,7 +33,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
 
-        size = new Vector3 (0.62f, 0.36f, 0f);
+        size = new Vector3 (0.6f, 0.3f, 0f);
         //Access the Left and Right pillars to get their transforms
         GameObject LeftPillar = GameObject.Find("Cylinder (L)");
         LeftPillarTransform = LeftPillar.GetComponent<Transform>();
@@ -57,7 +57,7 @@ public class Spawner : MonoBehaviour
         respawnTime = Random.Range(respawnRate / 2, respawnRate * 2);
         ObjectListLength = ObjectList.Count;
         centre.x = (LeftPillarTransform.position.x + RightPillarTransform.position.x) / 2;
-        centre.y = (TopCentreAOITransform.position.y /2);
+        centre.y = (TopCentreAOITransform.position.y/2);
         centre.z = (TopCentreAOITransform.position.z - 0.05f);
 
     }
