@@ -222,8 +222,24 @@ displayCheckButton = function (visible = false) {
     button.disabled = false;
 }
 
+// Launch Calibration Button
+displayCalibrationButton = function (active = false) {
+    button = document.getElementById('launchCalibrationButton');
+
+    if (active) {
+        button.disabled = false;
+        button.classList.remove('btn-light');
+        button.classList.add('btn-primary');
+    }
+    else {
+        button.disabled = true;
+        button.classList.remove('btn-primary');
+        button.classList.add('btn-light');
+    }
+}
+
 // Display a general error (e.g. lost connection)
-displayError = function(visible = true, error = "Error!") {
+displayError = function (visible = true, error = "Error!") {
     display = document.getElementById('errorDisplay');
     if (visible) {
         display.style.display = "block";
@@ -236,7 +252,7 @@ displayError = function(visible = true, error = "Error!") {
 }
 
 // Display an error when writing logs
-displayLogError = function(visible = true, error = "Error!") {
+displayLogError = function (visible = true, error = "Error!") {
     display = document.getElementById('logErrorDisplay');
     if (visible) {
         display.style.display = "block";

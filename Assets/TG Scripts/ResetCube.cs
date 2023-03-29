@@ -21,6 +21,7 @@ public class ResetCube : MonoBehaviour
             //renderer.enabled = true; //(to show the game object)
 
             GetComponent<Renderer>().enabled = false; //(to hide the game object)
+            GetComponent<BoxCollider>().enabled = false;
             Debug.Log("Cube hidden");
 
     }
