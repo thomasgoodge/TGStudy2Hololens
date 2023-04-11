@@ -17,9 +17,9 @@ GameObject:
   - component: {fileID: 3130339735828763074}
   - component: {fileID: 8783302830303566511}
   - component: {fileID: -5369094300814370866}
-  - component: {fileID: -7771069906929816796}
   - component: {fileID: 796478413693614104}
   - component: {fileID: 3371478121703997695}
+  - component: {fileID: 4980427431040792463}
   m_Layer: 0
   m_Name: TabletPenta
   m_TagString: Gem
@@ -265,18 +265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b01e0f8fa714f442867e88b9b09e7c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-7771069906929816796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4489212933387002418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc528da64c3911b4ebbbf4b8a7eac808, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &796478413693614104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,9 +301,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: -7771069906929816796}
-        m_TargetAssemblyTypeName: AddEmeraldPoint, Assembly-CSharp
-        m_MethodName: AddEmeraldScore
+      - m_Target: {fileID: 4980427431040792463}
+        m_TargetAssemblyTypeName: AddTEmeraldPoint, Assembly-CSharp
+        m_MethodName: AddTEmeraldScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -370,3 +358,15 @@ MonoBehaviour:
   localCenter: {x: 0.00000017881393, y: -0.00000043213367, z: -0.9823236}
   bounds: {x: 2.3095818, y: 0.83314145}
   touchableCollider: {fileID: 6120348350184420509}
+--- !u!114 &4980427431040792463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4489212933387002418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb789253ba40a342956d2a124227520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

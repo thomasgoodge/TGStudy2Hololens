@@ -17,10 +17,10 @@ GameObject:
   - component: {fileID: -523221997837805381}
   - component: {fileID: 8317158915333386039}
   - component: {fileID: -5491315255707968277}
-  - component: {fileID: 6658798099799359943}
   - component: {fileID: 24502010375283438}
   - component: {fileID: 5304796998198960267}
   - component: {fileID: -4375314466019145108}
+  - component: {fileID: 3186283000773858937}
   m_Layer: 0
   m_Name: TabletHexgon
   m_TagString: Gem
@@ -266,18 +266,6 @@ MonoBehaviour:
   rightExplosionParticles: {fileID: 4164994674942193377, guid: 760b934bb2a68db478ce364fc6b98ce5, type: 3}
   score: 0
   Destroyed: 0
---- !u!114 &6658798099799359943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7927207392137251540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 935c0a58c81b1724786b24ee133359bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &24502010375283438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,9 +335,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6658798099799359943}
-        m_TargetAssemblyTypeName: AddDiamondPoint, Assembly-CSharp
-        m_MethodName: AddDiamondScore
+      - m_Target: {fileID: 3186283000773858937}
+        m_TargetAssemblyTypeName: AddTDiamondPoint, Assembly-CSharp
+        m_MethodName: AddTDiamondScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -385,3 +373,15 @@ MonoBehaviour:
   minCompressPercentage: 0.25
   highlightPlate: {fileID: 0}
   highlightPlateAnimationTime: 0.25
+--- !u!114 &3186283000773858937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7927207392137251540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54ae06adc37f75e44b89802914b131bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

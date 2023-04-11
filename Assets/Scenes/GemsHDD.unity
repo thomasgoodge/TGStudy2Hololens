@@ -294,6 +294,60 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4070688397735756136, guid: 81f529d9b45e72042a81b3eb804a4122, type: 3}
   m_PrefabInstance: {fileID: 102002493}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &141423838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 141423840}
+  - component: {fileID: 141423839}
+  m_Layer: 0
+  m_Name: TabletScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &141423839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141423838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57dbdf9b23ba97846beb932a0adb4111, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TdiamondScoreText: {fileID: 707815593}
+  TemeraldScoreText: {fileID: 1753834258}
+  tdiamondScore: 0
+  temeraldScore: 0
+  tfinalDiamondScore: 
+  tfinalEmeraldScore: 
+  DataLoggerScript: {fileID: 0}
+  tEmeHazardSpawnerScript: {fileID: 8466591923175494238}
+  tDiaHazardSpawnerScript: {fileID: 8466591924857121288}
+  TdiamondSpawned: 0
+  TemeraldSpawned: 0
+--- !u!4 &141423840
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141423838}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 399.6, y: 127.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &397246580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1038,6 +1092,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66fb656d943e0c545bacc04a94120608, type: 3}
+--- !u!1 &1094665606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7618871823725745294, guid: f9605650789051b4f9dab0fbb801d5fb, type: 3}
+  m_PrefabInstance: {fileID: 7618871823608550698}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1094665611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094665606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57dbdf9b23ba97846beb932a0adb4111, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TdiamondScoreText: {fileID: 707815593}
+  TemeraldScoreText: {fileID: 1753834258}
+  tdiamondScore: 0
+  temeraldScore: 0
+  tfinalDiamondScore: 
+  tfinalEmeraldScore: 
+  DataLoggerScript: {fileID: 0}
+  tEmeHazardSpawnerScript: {fileID: 8466591923175494238}
+  tDiaHazardSpawnerScript: {fileID: 8466591924857121288}
+  TdiamondSpawned: 0
+  TemeraldSpawned: 0
 --- !u!1 &1227199967 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6662529740735252730, guid: f85e0904b9d0345499b7ba466c358415, type: 3}
@@ -1310,23 +1392,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5651860772406750099, guid: f85e0904b9d0345499b7ba466c358415, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.97011656
+      value: 1.1424093
       objectReference: {fileID: 0}
     - target: {fileID: 5651860772406750099, guid: f85e0904b9d0345499b7ba466c358415, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.0538441
+      value: 1.067193
       objectReference: {fileID: 0}
     - target: {fileID: 5651860772406750099, guid: f85e0904b9d0345499b7ba466c358415, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.051
+      value: 0.107
       objectReference: {fileID: 0}
     - target: {fileID: 5651860772406750099, guid: f85e0904b9d0345499b7ba466c358415, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.204
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 5651860772406750099, guid: f85e0904b9d0345499b7ba466c358415, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.732
+      value: 1.842
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f85e0904b9d0345499b7ba466c358415, type: 3}
@@ -1641,83 +1723,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e4749730f0cdc4db98972241198a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &2691720400900822696
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2691720400763642440, guid: c677fb9b04d748e4d8bd30fd7c5124ad, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2691720400763642440, guid: c677fb9b04d748e4d8bd30fd7c5124ad, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 399.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2691720400763642440, guid: c677fb9b04d748e4d8bd30fd7c5124ad, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 127.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2691720400763642440, guid: c677fb9b04d748e4d8bd30fd7c5124ad, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2691720400763642440, guid: c677fb9b04d748e4d8bd30fd7c5124ad, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2691720400763642440, guid: c677fb9b04d748e4d8bd30fd7c5124ad, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2691720400763642440, guid: c677fb9b04d748e4d8bd30fd7c5124ad, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2691720400763642440, guid: c677fb9b04d748e4d8bd30fd7c5124ad, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2691720400763642440, guid: c677fb9b04d748e4d8bd30fd7c5124ad, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2691720400763642440, guid: c677fb9b04d748e4d8bd30fd7c5124ad, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2691720400763642440, guid: c677fb9b04d748e4d8bd30fd7c5124ad, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2691720400763642486, guid: c677fb9b04d748e4d8bd30fd7c5124ad, type: 3}
-      propertyPath: m_Name
-      value: ScoreManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 2691720400763642487, guid: c677fb9b04d748e4d8bd30fd7c5124ad, type: 3}
-      propertyPath: DataLoggerScript
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2691720400763642487, guid: c677fb9b04d748e4d8bd30fd7c5124ad, type: 3}
-      propertyPath: diamondScoreText
-      value: 
-      objectReference: {fileID: 707815593}
-    - target: {fileID: 2691720400763642487, guid: c677fb9b04d748e4d8bd30fd7c5124ad, type: 3}
-      propertyPath: emeraldScoreText
-      value: 
-      objectReference: {fileID: 1753834258}
-    - target: {fileID: 2691720400763642487, guid: c677fb9b04d748e4d8bd30fd7c5124ad, type: 3}
-      propertyPath: DiaHazardSpawnerScript
-      value: 
-      objectReference: {fileID: 8466591924857121288}
-    - target: {fileID: 2691720400763642487, guid: c677fb9b04d748e4d8bd30fd7c5124ad, type: 3}
-      propertyPath: EmeHazardSpawnerScript
-      value: 
-      objectReference: {fileID: 8466591923175494238}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c677fb9b04d748e4d8bd30fd7c5124ad, type: 3}
 --- !u!1001 &7618871823608550698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1821,7 +1826,8 @@ PrefabInstance:
       propertyPath: EmeHazardSpawnerScript
       value: 
       objectReference: {fileID: 8466591924857121288}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7618871824093325753, guid: f9605650789051b4f9dab0fbb801d5fb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f9605650789051b4f9dab0fbb801d5fb, type: 3}
 --- !u!1 &8466591923175494238 stripped
 GameObject:

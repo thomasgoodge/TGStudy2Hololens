@@ -58,7 +58,7 @@ public class TabletSpawner : MonoBehaviour
         ObjectListLength = ObjectList.Count;
         centre.x = (LeftPillarTransform.position.x + RightPillarTransform.position.x) / 2;
         centre.y = (TabletAOITransform.position.y);
-        centre.z = (TabletAOITransform.position.z - 0.05f);
+        centre.z = (TabletAOITransform.position.z - 0.1f);
 
     }
  

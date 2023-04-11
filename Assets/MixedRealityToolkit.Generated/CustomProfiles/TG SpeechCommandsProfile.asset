@@ -59,14 +59,14 @@ MonoBehaviour:
       description: Toggle Profiler
       axisConstraint: 0
   - localizationKey: 
-    keyword: One
+    keyword: Level One
     keyCode: 0
     action:
       id: 0
       description: Toggle Profiler
       axisConstraint: 0
   - localizationKey: 
-    keyword: Two
+    keyword: Level Two
     keyCode: 0
     action:
       id: 0
@@ -87,14 +87,14 @@ MonoBehaviour:
       description: Toggle Profiler
       axisConstraint: 0
   - localizationKey: 
-    keyword: Three
+    keyword: Level Three
     keyCode: 0
     action:
       id: 0
       description: Toggle Profiler
       axisConstraint: 0
   - localizationKey: 
-    keyword: Four
+    keyword: Level Four
     keyCode: 0
     action:
       id: 0
