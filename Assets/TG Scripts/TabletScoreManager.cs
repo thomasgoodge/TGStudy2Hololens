@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TabletScoreManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class TabletScoreManager : MonoBehaviour
 
     public string tfinalDiamondScore;
     public string tfinalEmeraldScore;
+    public string condition;
 
     public GameObject DataLoggerScript;
     public GameObject tEmeHazardSpawnerScript;
@@ -23,11 +25,14 @@ public class TabletScoreManager : MonoBehaviour
     public int TdiamondSpawned;
     public int TemeraldSpawned;
 
+
     //Defines a Text object to display as a Canvas, and the score container
 
     private void Awake()
     {
         instance = this;
+        condition = SceneManager.GetActiveScene().name;
+
     }
     // Start is called before the first frame update
     void Start()
@@ -69,7 +74,7 @@ public class TabletScoreManager : MonoBehaviour
 
     public void WriteTString()
     {
-        string path = Application.persistentDataPath + "/tabletscore.txt";
+        string path = Application.persistentDataPath + "/" + condition + "_tabletscore.txt";
 
         StreamWriter writer = new StreamWriter(path, false);
         writer.WriteLine(TdiamondScoreText.text);

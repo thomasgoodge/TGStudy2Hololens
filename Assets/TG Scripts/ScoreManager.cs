@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class ScoreManager : MonoBehaviour
 
     public string finalDiamondScore;
     public string finalEmeraldScore;
+    public string condition;
 
     public GameObject DataLoggerScript;
     public GameObject EmeHazardSpawnerScript;
@@ -23,11 +25,14 @@ public class ScoreManager : MonoBehaviour
     public int diamondsSpawned;
     public int emeraldsSpawned;
 
+
     //Defines a Text object to display as a Canvas, and the score container
 
     private void Awake()
     {
         instance = this;
+        condition = SceneManager.GetActiveScene().name;
+
     }
     // Start is called before the first frame update
     void Start()
@@ -69,7 +74,8 @@ public class ScoreManager : MonoBehaviour
 
     public void WriteString()
     {
-        string path = Application.persistentDataPath + "/score.txt";
+
+        string path = Application.persistentDataPath + "/" + condition + "_score.txt";
 
         StreamWriter writer = new StreamWriter(path, false);
         writer.WriteLine(diamondScoreText.text);
