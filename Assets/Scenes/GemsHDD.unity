@@ -123,6 +123,28 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &21387822 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1630244930048154894, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+  m_PrefabInstance: {fileID: 649117146}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b01e0f8fa714f442867e88b9b09e7c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &72176800 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1630244930048154894, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+  m_PrefabInstance: {fileID: 1647813567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b01e0f8fa714f442867e88b9b09e7c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &76381521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -329,6 +351,7 @@ MonoBehaviour:
   temeraldScore: 0
   tfinalDiamondScore: 
   tfinalEmeraldScore: 
+  condition: 
   DataLoggerScript: {fileID: 0}
   tEmeHazardSpawnerScript: {fileID: 8466591923175494238}
   tDiaHazardSpawnerScript: {fileID: 8466591924857121288}
@@ -691,6 +714,10 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -715,17 +742,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1695424787496510407}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
-      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
       objectReference: {fileID: 531790156}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
-      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[7].m_Target
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
       objectReference: {fileID: 1227199969}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
-      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[8].m_Target
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[7].m_Target
       value: 
       objectReference: {fileID: 596011015}
+    - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[8].m_Target
+      value: 
+      objectReference: {fileID: 779141971}
+    - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
       value: 2
@@ -747,6 +782,14 @@ PrefabInstance:
       value: StartSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: DisableMesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: DisableMesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
       value: DisableMesh
       objectReference: {fileID: 0}
@@ -756,7 +799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[8].m_MethodName
-      value: DisableMesh
+      value: DestroyThisTarget
       objectReference: {fileID: 0}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
@@ -767,8 +810,16 @@ PrefabInstance:
       value: TabletSpawner, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
-      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
       value: ResetCube, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: ResetCube, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
+      value: ResetMesh, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[7].m_TargetAssemblyTypeName
@@ -776,7 +827,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[8].m_TargetAssemblyTypeName
-      value: ResetMesh, Assembly-CSharp
+      value: DestroyTarget, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3514141811396041088, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -962,6 +1017,80 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
+--- !u!1001 &649117146
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -4375314466019145108, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: TouchBegin.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4375314466019145108, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: TouchBegin.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 21387822}
+    - target: {fileID: -4375314466019145108, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: TouchBegin.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DestroyThisTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: -4375314466019145108, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: TouchBegin.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DestroyTarget, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927207392137251540, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_Name
+      value: TabletHexgon (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.175
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.087
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.463
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -4138631624688995549, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
 --- !u!114 &707815593 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7618871823976627587, guid: f9605650789051b4f9dab0fbb801d5fb, type: 3}
@@ -971,6 +1100,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &779141971 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3514141811396041149, guid: 13eed189df507494eac2f425ba3c3d6c, type: 3}
+  m_PrefabInstance: {fileID: 518152631}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b01e0f8fa714f442867e88b9b09e7c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &797951256
@@ -1092,6 +1232,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66fb656d943e0c545bacc04a94120608, type: 3}
+--- !u!1001 &879920927
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 796478413693614104, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: TouchBegin.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 796478413693614104, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: TouchBegin.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1889337922}
+    - target: {fileID: 796478413693614104, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: TouchBegin.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DestroyThisTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 796478413693614104, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: TouchBegin.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DestroyTarget, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.172
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.056999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.463
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4489212933387002418, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_Name
+      value: TabletPenta
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1258295950979924017, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
 --- !u!1 &1094665606 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7618871823725745294, guid: f9605650789051b4f9dab0fbb801d5fb, type: 3}
@@ -1115,6 +1329,7 @@ MonoBehaviour:
   temeraldScore: 0
   tfinalDiamondScore: 
   tfinalEmeraldScore: 
+  condition: 
   DataLoggerScript: {fileID: 0}
   tEmeHazardSpawnerScript: {fileID: 8466591923175494238}
   tDiaHazardSpawnerScript: {fileID: 8466591924857121288}
@@ -1229,6 +1444,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1269674708 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -5369094300814370866, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+  m_PrefabInstance: {fileID: 1874911233}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b01e0f8fa714f442867e88b9b09e7c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1337642413 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5651860772406750100, guid: f85e0904b9d0345499b7ba466c358415, type: 3}
@@ -1412,6 +1638,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f85e0904b9d0345499b7ba466c358415, type: 3}
+--- !u!1001 &1647813567
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -4375314466019145108, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: TouchBegin.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4375314466019145108, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: TouchBegin.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 72176800}
+    - target: {fileID: -4375314466019145108, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: TouchBegin.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DestroyThisTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: -4375314466019145108, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: TouchBegin.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DestroyTarget, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927207392137251540, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_Name
+      value: TabletHexgon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.12900001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.057
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.463
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930453441403042962, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -4138631624688995549, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 771750f2bc10d8f43aefdac7fa902016, type: 3}
 --- !u!114 &1753834258 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7618871825092769336, guid: f9605650789051b4f9dab0fbb801d5fb, type: 3}
@@ -1516,6 +1816,91 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &1874911233
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 796478413693614104, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: TouchBegin.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 796478413693614104, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: TouchBegin.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1269674708}
+    - target: {fileID: 796478413693614104, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: TouchBegin.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DestroyThisTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 796478413693614104, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: TouchBegin.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DestroyTarget, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.087
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.463
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485966883143817746, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4489212933387002418, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+      propertyPath: m_Name
+      value: TabletPenta (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1258295950979924017, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+--- !u!114 &1889337922 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -5369094300814370866, guid: 9e84605d91ba1254781fad32c892e942, type: 3}
+  m_PrefabInstance: {fileID: 879920927}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b01e0f8fa714f442867e88b9b09e7c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1942987254
 GameObject:
   m_ObjectHideFlags: 0

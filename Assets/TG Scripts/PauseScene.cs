@@ -5,6 +5,10 @@ using UnityEngine;
 public class PauseScene : MonoBehaviour
 {
 
+void Awake() {
+    ResumeGame();
+}
+
     // Start is called before the first frame update
 void PauseGame ()
     {
